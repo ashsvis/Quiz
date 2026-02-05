@@ -42,6 +42,7 @@
             flowLayoutPanel2 = new FlowLayoutPanel();
             btnAppendFromClipboard = new Button();
             timerDataChecker = new System.Windows.Forms.Timer(components);
+            tvTurnaments = new TreeView();
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
@@ -50,12 +51,14 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 256F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 0);
-            tableLayoutPanel1.Controls.Add(lvTable, 0, 1);
-            tableLayoutPanel1.Controls.Add(flowLayoutPanel2, 1, 0);
+            tableLayoutPanel1.Controls.Add(lvTable, 1, 1);
+            tableLayoutPanel1.Controls.Add(flowLayoutPanel2, 2, 0);
+            tableLayoutPanel1.Controls.Add(tvTurnaments, 0, 1);
             tableLayoutPanel1.Location = new Point(12, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -67,6 +70,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(flowLayoutPanel1, 2);
             flowLayoutPanel1.Controls.Add(btnCreateNew);
             flowLayoutPanel1.Controls.Add(btnEditCurrent);
             flowLayoutPanel1.Controls.Add(btnDeleteCurrent);
@@ -127,11 +131,11 @@
             tableLayoutPanel1.SetColumnSpan(lvTable, 2);
             lvTable.Dock = DockStyle.Fill;
             lvTable.FullRowSelect = true;
-            lvTable.Location = new Point(3, 42);
+            lvTable.Location = new Point(259, 42);
             lvTable.MultiSelect = false;
             lvTable.Name = "lvTable";
             lvTable.ShowItemToolTips = true;
-            lvTable.Size = new Size(971, 450);
+            lvTable.Size = new Size(715, 450);
             lvTable.Sorting = SortOrder.Ascending;
             lvTable.TabIndex = 0;
             lvTable.UseCompatibleStateImageBehavior = false;
@@ -185,6 +189,16 @@
             // 
             timerDataChecker.Tick += timerDataChecker_Tick;
             // 
+            // tvTurnaments
+            // 
+            tvTurnaments.BackColor = Color.Gainsboro;
+            tvTurnaments.BorderStyle = BorderStyle.FixedSingle;
+            tvTurnaments.Dock = DockStyle.Fill;
+            tvTurnaments.Location = new Point(3, 42);
+            tvTurnaments.Name = "tvTurnaments";
+            tvTurnaments.Size = new Size(250, 450);
+            tvTurnaments.TabIndex = 2;
+            // 
             // QuizesUC
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -217,5 +231,6 @@
         private FlowLayoutPanel flowLayoutPanel2;
         private Button btnAppendFromClipboard;
         private System.Windows.Forms.Timer timerDataChecker;
+        private TreeView tvTurnaments;
     }
 }

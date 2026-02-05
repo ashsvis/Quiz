@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace QuizHelper
 {
@@ -19,6 +23,7 @@ namespace QuizHelper
 
         private void QuizesUC_Load(object sender, EventArgs e)
         {
+            LoadContent();
             timerDataChecker.Enabled = true;
         }
 
@@ -121,94 +126,101 @@ namespace QuizHelper
             return Clipboard.GetDataObject() is DataObject retrievedData && retrievedData.ContainsText();
         }
 
+        private List<Tournament> tournaments = [];
+
         private void PasteFromClipboard()
         {
             if (Clipboard.GetDataObject() is DataObject retrievedData && retrievedData.ContainsText())
             {
-                var text = retrievedData.GetText();
-                QuestionData question = new();
-                var order = QuestionOrder.None;
-                List<QuestionData> questions = [];
-                questions.Add(question);
-                foreach (var line in text.Split("\r\n"))
+                var text = retrievedData.GetText().TrimStart();
+                if (text.StartsWith("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"))
                 {
-                    if (line.StartsWith("Чемпионат:"))
-                        order = QuestionOrder.Championship;
-                    else if (line.StartsWith("Дата:"))
-                        order = QuestionOrder.Date;
-                    else if (line.StartsWith("URL:"))
-                        order = QuestionOrder.Url;
-                    else if (line.StartsWith("Редактор:"))
-                        order = QuestionOrder.Editor;
-                    else if (line.StartsWith("Тур:"))
-                        order = QuestionOrder.Tour;
-                    else if (line.StartsWith("Вопрос ") && line.EndsWith(":"))
+                    var xdoc = XDocument.Parse(text);
+                    var xtournament = xdoc.Element("tournament");
+                    if (xtournament != null)
                     {
-                        var snum = line.TrimEnd(':').Substring(6);
-                        if (int.TryParse(snum, out int number))
+                        var atype = $"{xtournament.Element("Type")?.Value}";
+                        Tournament? tournament = null;
+                        if (atype == "Ч")
                         {
-                            question.QuestionNumber = number;
-                            order = QuestionOrder.Question;
-                        }
-                    }
-                    else if (line.StartsWith("Ответ:"))
-                        order = QuestionOrder.Answer;
-                    else if (line.StartsWith("Источник:"))
-                        order = QuestionOrder.Source;
-                    else if (line.StartsWith("Автор:"))
-                        order = QuestionOrder.Author;
-                    else if (line.StartsWith("Комментарий:"))
-                        order = QuestionOrder.Comment;
-                    else if (line == "")
-                    {
-                        if (order == QuestionOrder.Author)
-                        {
-                            // готовим новый вопрос
-                            question = new QuestionData
+                            var tid = $"{xtournament.Element("Id")?.Value}";
+                            if (!tournaments.Any(x => x.id == tid))
                             {
-                                Championship = question.Championship,
-                                Date = question.Date,
-                                Url = question.Url,
-                                Tour = question.Tour,
-                            };
-                            questions.Add(question);
+                                tournament = new()
+                                {
+                                    type = atype,
+                                    id = tid,
+                                    parentId = $"{xtournament.Element("ParentId")?.Value}",
+                                    title = $"{xtournament.Element("Title")?.Value}",
+                                    number = $"{xtournament.Element("Number")?.Value}",
+                                    editors = $"{xtournament.Element("Editors")?.Value}",
+                                    createdAt = $"{xtournament.Element("CreatedAt")?.Value}",
+                                };
+                                tournaments.Add(tournament);
+                            }
+                            else
+                                tournament = tournaments.First(x => x.id == tid);
                         }
-                        order = QuestionOrder.None;
-                    }
-                    else
-                    {
-                        switch (order)
+                        foreach (XElement xtour in xtournament.Elements("tour"))
                         {
-                            case QuestionOrder.Championship:
-                                question.Championship = line;
-                                break;
-                            case QuestionOrder.Date:
-                                question.Date = DateTime.TryParse(line, out DateTime date) ? date : DateTime.MinValue;
-                                break;
-                            case QuestionOrder.Url:
-                                question.Url = line;
-                                break;
-                            case QuestionOrder.Editor:
-                                question.Editor = line;
-                                break;
-                            case QuestionOrder.Tour:
-                                question.Tour = line;
-                                break;
-                            case QuestionOrder.Question:
-                                question.Question.Add(line);
-                                break;
-                            case QuestionOrder.Answer:
-                                question.Answer = line;
-                                break;
-                            case QuestionOrder.Comment:
-                                question.Comment.Add(line);
-                                break;
-                            case QuestionOrder.Source:
-                                question.Source.Add(line);
-                                break;
-                            case QuestionOrder.Author:
-                                question.Author.Add(line);
-                                break;
+                            atype = $"{xtour.Element("Type")?.Value}";
+                            var rid = $"{xtour.Element("Id")?.Value}";
+                            var pid = $"{xtour.Element("ParentId")?.Value}";
+                            if (atype == "Т" && tournament != null && pid == tournament.id)
+                            {
+                                if (!tournament.tours.Any(x => x.id == rid))
+                                {
+                                    Tour tour = new()
+                                    {
+                                        type = atype,
+                                        id = rid,
+                                        parentId = pid,
+                                        title = $"{xtour.Element("Title")?.Value}",
+                                        number = $"{xtour.Element("Number")?.Value}",
+                                        editors = $"{xtour.Element("Editors")?.Value}",
+                                        createdAt = $"{xtour.Element("CreatedAt")?.Value}",
+                                    };
+                                    tournament.tours.Add(tour);
+                                }
+                            }
+                        }
+
+                        foreach (XElement xquestion in xtournament.Elements("question"))
+                        {
+                            atype = $"{xquestion.Element("Type")?.Value}";
+                            var qid = $"{xquestion.Element("QuestionId")?.Value}";
+                            var pid = $"{xquestion.Element("ParentId")?.Value}";
+                            var found = false;
+                            Tour? tr = null;
+                            foreach (var tt in tournaments)
+                            {
+                                if (tt.tours.Any(x => x.id == pid))
+                                {
+                                    found = true;
+                                    tr = tt.tours.First(x => x.id == pid);
+                                    break;
+                                }
+                            }
+                            if (tr != null && atype == "Ч" && found)
+                            {
+                                if (!tr.questions.Any(x => x.questionId == qid))
+                                {
+                                    Question question = new()
+                                    {
+                                        type = atype,
+                                        questionId = qid,
+                                        parentId = pid,
+                                        title = $"{xquestion.Element("Title")?.Value}",
+                                        number = $"{xquestion.Element("Number")?.Value}",
+                                        question = $"{xquestion.Element("Question")?.Value}",
+                                        answer = $"{xquestion.Element("Answer")?.Value}",
+                                        authors = $"{xquestion.Element("Authors")?.Value}",
+                                        sources = $"{xquestion.Element("Sources")?.Value}",
+                                        comments = $"{xquestion.Element("Comments")?.Value}",
+                                    };
+                                    tr.questions.Add(question);
+                                }
+                            }
                         }
                     }
                 }
@@ -223,44 +235,87 @@ namespace QuizHelper
         private void btnAppendFromClipboard_Click(object sender, EventArgs e)
         {
             PasteFromClipboard();
+            SaveContent();
+            FillTree();
         }
-    }
 
-    public enum QuestionOrder
-    {
-        None,
-        Championship,
-        Date,
-        Url,
-        Editor,
-        Tour,
-        QuestionNumber,
-        Question,
-        Answer,
-        Comment,
-        Source,
-        Author,
-        Text
-    }
-
-    public class QuestionData
-    {
-        public string Championship { get; set; } = string.Empty;
-        public DateTime Date { get; set; }
-        public string Url { get; set; } = string.Empty;
-        public string Editor { get; set; } = string.Empty;
-        public string Tour { get; set; } = string.Empty;
-        public int QuestionNumber { get; set; }
-        public List<string> Question { get; set; } = [];
-        public string Answer { get; set; } = string.Empty;
-        public List<string> Source { get; set; } = [];
-        public List<string> Author { get; set; } = [];
-        public List<string> Comment { get; set; } = [];
-
-        public override string ToString()
+        private void SaveContent()
         {
-            return $"Ch:{Championship} Tour:{Tour} Q:{QuestionNumber} An:{Answer} Ed:{Editor} Autor:{string.Join(" ", Author)}";
+            var text = JsonConvert.SerializeObject(tournaments);
+            var file = Path.Combine(Path.ChangeExtension(Application.ExecutablePath, ".json"));
+            File.WriteAllText(file, text);
         }
 
+        private void LoadContent()
+        {
+            var file = Path.Combine(Path.ChangeExtension(Application.ExecutablePath, ".json"));
+            if (File.Exists(file)) 
+            { 
+                var text = File.ReadAllText(file);
+                var items = JsonConvert.DeserializeObject<List<Tournament>>(text);
+                tournaments.Clear();
+                if (items != null)
+                    tournaments.AddRange(items);
+                FillTree();
+            }
+        }
+
+        private void FillTree()
+        {
+            tvTurnaments.Nodes.Clear();
+            foreach (var tournament in tournaments)
+            {
+                var nodeTournament = new TreeNode() { Text = tournament.title, Tag = tournament };
+                tvTurnaments.Nodes.Add(nodeTournament);
+                foreach (var tour in tournament.tours)
+                {
+                    var nodeTour = new TreeNode() { Text = tour.title, Tag = tour };
+                    nodeTournament.Nodes.Add(nodeTour);
+                    foreach (var question in tour.questions)
+                    {
+                        var nodeQuestion = new TreeNode() { Text = question.number, Tag = question };
+                        nodeTour.Nodes.Add(nodeQuestion);
+                    }
+                }
+            }
+        }
+
+        public class Question
+        {
+            public string type = string.Empty;
+            public string questionId = string.Empty;
+            public string parentId = string.Empty;
+            public string title = string.Empty;
+            public string number = string.Empty;
+            public string question = string.Empty;
+            public string answer = string.Empty;
+            public string authors = string.Empty;
+            public string sources = string.Empty;
+            public string comments = string.Empty;
+        }
+
+        public class Tour
+        {
+            public string type = string.Empty;
+            public string id = string.Empty;
+            public string parentId = string.Empty;
+            public string title = string.Empty;
+            public string number = string.Empty;
+            public string editors = string.Empty;
+            public string createdAt = string.Empty;
+            public List<Question> questions = [];
+        }
+
+        public class Tournament
+        {
+            public string type = string.Empty;
+            public string id = string.Empty;
+            public string parentId = string.Empty;
+            public string title = string.Empty;
+            public string number = string.Empty;
+            public string editors = string.Empty;
+            public string createdAt = string.Empty;
+            public List<Tour> tours = [];
+        }
     }
 }
