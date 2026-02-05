@@ -1,16 +1,5 @@
-﻿using MySqlX.XDevAPI.Relational;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Newtonsoft.Json;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace QuizHelper
@@ -62,25 +51,25 @@ namespace QuizHelper
         /// <param name="e"></param>
         private void btnEditCurrent_Click(object sender, EventArgs e)
         {
-            var selected = lvTable.SelectedItems[0];
-            var values = (object[])selected.Tag;
-            var dlg = new QuizeForm();
-            dlg.tbName.Text = $"{values[1]}";
-            dlg.tbDescriptor.Text = $"{values[2]}";
-            dlg.tbContacts.Text = $"{values[3]}";
-            dlg.tbOfficeAddress.Text = $"{values[4]}";
-            var result = dlg.ShowDialog(this);
-            if (result != DialogResult.OK && result != DialogResult.Yes)
-                return;
-            var id = (int)values[0];
-            var columns = new Dictionary<string, object>
-            {
-                { "Id", id },
-                { "Name", dlg.tbName.Text },
-                { "Contacts", dlg.tbContacts.Text },
-                { "OfficeAddress", dlg.tbOfficeAddress.Text },
-                { "Descriptor", dlg.tbDescriptor.Text }
-            };
+            //var selected = lvTable.SelectedItems[0];
+            //var values = (object[])selected.Tag;
+            //var dlg = new QuizeForm();
+            //dlg.tbName.Text = $"{values[1]}";
+            //dlg.tbDescriptor.Text = $"{values[2]}";
+            //dlg.tbContacts.Text = $"{values[3]}";
+            //dlg.tbOfficeAddress.Text = $"{values[4]}";
+            //var result = dlg.ShowDialog(this);
+            //if (result != DialogResult.OK && result != DialogResult.Yes)
+            //    return;
+            //var id = (int)values[0];
+            //var columns = new Dictionary<string, object>
+            //{
+            //    { "Id", id },
+            //    { "Name", dlg.tbName.Text },
+            //    { "Contacts", dlg.tbContacts.Text },
+            //    { "OfficeAddress", dlg.tbOfficeAddress.Text },
+            //    { "Descriptor", dlg.tbDescriptor.Text }
+            //};
             try
             {
                 //Helper.UpdateTable("AirCompany", columns);
@@ -103,13 +92,13 @@ namespace QuizHelper
             if (MessageBox.Show(this, "Удалить теущую запись?", "Подтверждение действия",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) != DialogResult.OK)
                 return;
-            var selected = lvTable.SelectedItems[0];
-            var values = (object[])selected.Tag;
-            var id = (int)values[0];
-            var columns = new Dictionary<string, object>
-            {
-                { "Id", id }
-            };
+            //var selected = lvTable.SelectedItems[0];
+            //var values = (object[])selected.Tag;
+            //var id = (int)values[0];
+            //var columns = new Dictionary<string, object>
+            //{
+            //    { "Id", id }
+            //};
             try
             {
                 //Helper.DeleteTable("AirCompany", columns);
@@ -321,35 +310,21 @@ namespace QuizHelper
 
         private void tvTurnaments_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            lvTable.Items.Clear();
-            lvTable.Groups.Clear();
+            panChildView.Controls.Clear();
             var node = tvTurnaments.SelectedNode;
             if (node != null)
             {
                 if (node.Tag is Tournament tournament)
                 {
-                    foreach (var tour in tournament.tours)
-                    {
-                        ListViewGroup group = new(tour.title, HorizontalAlignment.Center);
-                        lvTable.Groups.Add(group);
-                        foreach (var question in tour.questions.OrderBy(x => int.Parse(x.number)))
-                        {
-                            var lvi = new ListViewItem(group) { Text = question.number };
-                            lvi.SubItems.Add(question.question);
-                            lvTable.Items.Add(lvi);
-                        }
-                    }
+                    QuestionsUC questionsUC = new() { Dock = DockStyle.Fill };
+                    questionsUC.UpdateTable(tournament);
+                    panChildView.Controls.Add(questionsUC);
                 }
                 else if (node.Tag is Tour tour)
                 {
-                    ListViewGroup group = new(tour.title, HorizontalAlignment.Center);
-                    lvTable.Groups.Add(group);
-                    foreach (var question in tour.questions.OrderBy(x => int.Parse(x.number)))
-                    {
-                        var lvi = new ListViewItem(group) { Text = question.number };
-                        lvi.SubItems.Add(question.question);
-                        lvTable.Items.Add(lvi);
-                    }
+                    QuestionsUC questionsUC = new() { Dock = DockStyle.Fill };
+                    questionsUC.UpdateTable(tour);
+                    panChildView.Controls.Add(questionsUC);
                 }
             }
         }

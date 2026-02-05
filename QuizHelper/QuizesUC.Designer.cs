@@ -34,12 +34,10 @@
             btnCreateNew = new Button();
             btnEditCurrent = new Button();
             btnDeleteCurrent = new Button();
-            lvTable = new ListView();
-            columnHeader1 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
             flowLayoutPanel2 = new FlowLayoutPanel();
             btnAppendFromClipboard = new Button();
             tvTurnaments = new TreeView();
+            panChildView = new Panel();
             timerDataChecker = new System.Windows.Forms.Timer(components);
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -54,9 +52,9 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 0);
-            tableLayoutPanel1.Controls.Add(lvTable, 1, 1);
             tableLayoutPanel1.Controls.Add(flowLayoutPanel2, 2, 0);
             tableLayoutPanel1.Controls.Add(tvTurnaments, 0, 1);
+            tableLayoutPanel1.Controls.Add(panChildView, 1, 1);
             tableLayoutPanel1.Location = new Point(12, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -121,33 +119,6 @@
             btnDeleteCurrent.UseVisualStyleBackColor = false;
             btnDeleteCurrent.Click += btnDeleteCurrent_Click;
             // 
-            // lvTable
-            // 
-            lvTable.BackColor = Color.Gainsboro;
-            lvTable.BorderStyle = BorderStyle.FixedSingle;
-            lvTable.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3 });
-            tableLayoutPanel1.SetColumnSpan(lvTable, 2);
-            lvTable.Dock = DockStyle.Fill;
-            lvTable.FullRowSelect = true;
-            lvTable.Location = new Point(259, 42);
-            lvTable.MultiSelect = false;
-            lvTable.Name = "lvTable";
-            lvTable.ShowItemToolTips = true;
-            lvTable.Size = new Size(715, 450);
-            lvTable.TabIndex = 0;
-            lvTable.UseCompatibleStateImageBehavior = false;
-            lvTable.View = View.Details;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "";
-            columnHeader1.Width = 40;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "Вопрос";
-            columnHeader3.Width = 800;
-            // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.AutoSize = true;
@@ -179,11 +150,22 @@
             tvTurnaments.Dock = DockStyle.Fill;
             tvTurnaments.FullRowSelect = true;
             tvTurnaments.HideSelection = false;
-            tvTurnaments.Location = new Point(3, 42);
+            tvTurnaments.Location = new Point(0, 39);
+            tvTurnaments.Margin = new Padding(0);
             tvTurnaments.Name = "tvTurnaments";
-            tvTurnaments.Size = new Size(250, 450);
+            tvTurnaments.Size = new Size(256, 456);
             tvTurnaments.TabIndex = 2;
             tvTurnaments.AfterSelect += tvTurnaments_AfterSelect;
+            // 
+            // panChildView
+            // 
+            tableLayoutPanel1.SetColumnSpan(panChildView, 2);
+            panChildView.Dock = DockStyle.Fill;
+            panChildView.Location = new Point(256, 39);
+            panChildView.Margin = new Padding(0);
+            panChildView.Name = "panChildView";
+            panChildView.Size = new Size(721, 456);
+            panChildView.TabIndex = 3;
             // 
             // timerDataChecker
             // 
@@ -213,12 +195,10 @@
         private System.Windows.Forms.Button btnCreateNew;
         private System.Windows.Forms.Button btnEditCurrent;
         private System.Windows.Forms.Button btnDeleteCurrent;
-        private System.Windows.Forms.ListView lvTable;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
         private FlowLayoutPanel flowLayoutPanel2;
         private Button btnAppendFromClipboard;
         private System.Windows.Forms.Timer timerDataChecker;
         private TreeView tvTurnaments;
+        private Panel panChildView;
     }
 }
