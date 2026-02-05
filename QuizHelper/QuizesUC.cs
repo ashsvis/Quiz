@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MySqlX.XDevAPI.Relational;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -249,8 +250,8 @@ namespace QuizHelper
         private void LoadContent()
         {
             var file = Path.Combine(Path.ChangeExtension(Application.ExecutablePath, ".json"));
-            if (File.Exists(file)) 
-            { 
+            if (File.Exists(file))
+            {
                 var text = File.ReadAllText(file);
                 var items = JsonConvert.DeserializeObject<List<Tournament>>(text);
                 tournaments.Clear();
@@ -316,6 +317,41 @@ namespace QuizHelper
             public string editors = string.Empty;
             public string createdAt = string.Empty;
             public List<Tour> tours = [];
+        }
+
+        private void tvTurnaments_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            lvTable.Items.Clear();
+            lvTable.Groups.Clear();
+            var node = tvTurnaments.SelectedNode;
+            if (node != null)
+            {
+                if (node.Tag is Tournament tournament)
+                {
+                    foreach (var tour in tournament.tours)
+                    {
+                        ListViewGroup group = new(tour.title, HorizontalAlignment.Center);
+                        lvTable.Groups.Add(group);
+                        foreach (var question in tour.questions.OrderBy(x => int.Parse(x.number)))
+                        {
+                            var lvi = new ListViewItem(group) { Text = question.number };
+                            lvi.SubItems.Add(question.question);
+                            lvTable.Items.Add(lvi);
+                        }
+                    }
+                }
+                else if (node.Tag is Tour tour)
+                {
+                    ListViewGroup group = new(tour.title, HorizontalAlignment.Center);
+                    lvTable.Groups.Add(group);
+                    foreach (var question in tour.questions.OrderBy(x => int.Parse(x.number)))
+                    {
+                        var lvi = new ListViewItem(group) { Text = question.number };
+                        lvi.SubItems.Add(question.question);
+                        lvTable.Items.Add(lvi);
+                    }
+                }
+            }
         }
     }
 }

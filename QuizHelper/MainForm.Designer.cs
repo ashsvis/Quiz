@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1210, 657);
+            ClientSize = new Size(1159, 657);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Помощник для викторины";

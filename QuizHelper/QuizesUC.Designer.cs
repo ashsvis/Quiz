@@ -36,13 +36,11 @@
             btnDeleteCurrent = new Button();
             lvTable = new ListView();
             columnHeader1 = new ColumnHeader();
-            columnHeader5 = new ColumnHeader();
-            columnHeader6 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             flowLayoutPanel2 = new FlowLayoutPanel();
             btnAppendFromClipboard = new Button();
-            timerDataChecker = new System.Windows.Forms.Timer(components);
             tvTurnaments = new TreeView();
+            timerDataChecker = new System.Windows.Forms.Timer(components);
             tableLayoutPanel1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
@@ -127,7 +125,7 @@
             // 
             lvTable.BackColor = Color.Gainsboro;
             lvTable.BorderStyle = BorderStyle.FixedSingle;
-            lvTable.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader5, columnHeader6, columnHeader3 });
+            lvTable.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3 });
             tableLayoutPanel1.SetColumnSpan(lvTable, 2);
             lvTable.Dock = DockStyle.Fill;
             lvTable.FullRowSelect = true;
@@ -136,30 +134,19 @@
             lvTable.Name = "lvTable";
             lvTable.ShowItemToolTips = true;
             lvTable.Size = new Size(715, 450);
-            lvTable.Sorting = SortOrder.Ascending;
             lvTable.TabIndex = 0;
             lvTable.UseCompatibleStateImageBehavior = false;
             lvTable.View = View.Details;
             // 
             // columnHeader1
             // 
-            columnHeader1.Text = "Название";
-            columnHeader1.Width = 200;
-            // 
-            // columnHeader5
-            // 
-            columnHeader5.Text = "Контакты";
-            columnHeader5.Width = 200;
-            // 
-            // columnHeader6
-            // 
-            columnHeader6.Text = "Адрес главного офиса";
-            columnHeader6.Width = 250;
+            columnHeader1.Text = "";
+            columnHeader1.Width = 40;
             // 
             // columnHeader3
             // 
-            columnHeader3.Text = "Описание";
-            columnHeader3.Width = 300;
+            columnHeader3.Text = "Вопрос";
+            columnHeader3.Width = 800;
             // 
             // flowLayoutPanel2
             // 
@@ -185,19 +172,22 @@
             btnAppendFromClipboard.Visible = false;
             btnAppendFromClipboard.Click += btnAppendFromClipboard_Click;
             // 
-            // timerDataChecker
-            // 
-            timerDataChecker.Tick += timerDataChecker_Tick;
-            // 
             // tvTurnaments
             // 
             tvTurnaments.BackColor = Color.Gainsboro;
             tvTurnaments.BorderStyle = BorderStyle.FixedSingle;
             tvTurnaments.Dock = DockStyle.Fill;
+            tvTurnaments.FullRowSelect = true;
+            tvTurnaments.HideSelection = false;
             tvTurnaments.Location = new Point(3, 42);
             tvTurnaments.Name = "tvTurnaments";
             tvTurnaments.Size = new Size(250, 450);
             tvTurnaments.TabIndex = 2;
+            tvTurnaments.AfterSelect += tvTurnaments_AfterSelect;
+            // 
+            // timerDataChecker
+            // 
+            timerDataChecker.Tick += timerDataChecker_Tick;
             // 
             // QuizesUC
             // 
@@ -225,8 +215,6 @@
         private System.Windows.Forms.Button btnDeleteCurrent;
         private System.Windows.Forms.ListView lvTable;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private FlowLayoutPanel flowLayoutPanel2;
         private Button btnAppendFromClipboard;
