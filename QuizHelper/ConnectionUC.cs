@@ -12,7 +12,7 @@ namespace QuizHelper
         public ConnectionUC()
         {
             InitializeComponent();
-            CheckConnection();
+            EnshureConnection();
         }
 
         private void ConnectionUC_Load(object sender, EventArgs e)
@@ -51,16 +51,16 @@ namespace QuizHelper
             Properties.Settings.Default.User = tbUser.Text;
             Properties.Settings.Default.Password = tbPassword.Text;
 
-            CheckConnection();
+            EnshureConnection();
             if (isConnected)
                 MessageBox.Show(this, "Успешное подключение", "Проверка подключения", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show(this, ServerSQL.LastError, "Проверка подключения", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void CheckConnection()
+        public bool EnshureConnection()
         {
-            if (isConnected) return;
+            if (isConnected) return true;
             var connectionString =
                 "server=" + Properties.Settings.Default.Host +
                 ";user=" + Properties.Settings.Default.User +
@@ -69,6 +69,7 @@ namespace QuizHelper
             var database = Properties.Settings.Default.Database;
             using ServerSQL server = new(connectionString, database);
             isConnected = server.Connected;
+            return isConnected;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
