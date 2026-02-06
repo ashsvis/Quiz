@@ -28,7 +28,8 @@ namespace QuizHelper
                 lvTable.Groups.Add(group);
                 foreach (var question in tour.questions.OrderBy(x => int.Parse(x.number)))
                 {
-                    var lvi = new ListViewItem(group) { Text = question.number };
+                    var lvi = new ListViewItem(group);
+                    lvi.SubItems.Add(question.number + ".");
                     lvi.SubItems.Add(question.question.Replace("\n", " "));
                     lvTable.Items.Add(lvi);
                 }
@@ -45,7 +46,8 @@ namespace QuizHelper
             lvTable.Groups.Add(group);
             foreach (var question in tour.questions.OrderBy(x => int.Parse(x.number)))
             {
-                var lvi = new ListViewItem(group) { Text = question.number };
+                var lvi = new ListViewItem(group);
+                lvi.SubItems.Add(question.number + ".");
                 lvi.SubItems.Add(question.question.Replace("\n", " "));
                 lvTable.Items.Add(lvi);
             }

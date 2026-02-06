@@ -48,7 +48,7 @@
             // 
             tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 256F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 296F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.Controls.Add(flowLayoutPanel1, 0, 0);
@@ -148,12 +148,13 @@
             tvTurnaments.BackColor = Color.Gainsboro;
             tvTurnaments.BorderStyle = BorderStyle.FixedSingle;
             tvTurnaments.Dock = DockStyle.Fill;
+            tvTurnaments.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             tvTurnaments.FullRowSelect = true;
             tvTurnaments.HideSelection = false;
             tvTurnaments.Location = new Point(0, 39);
             tvTurnaments.Margin = new Padding(0);
             tvTurnaments.Name = "tvTurnaments";
-            tvTurnaments.Size = new Size(256, 456);
+            tvTurnaments.Size = new Size(296, 456);
             tvTurnaments.TabIndex = 2;
             tvTurnaments.AfterSelect += tvTurnaments_AfterSelect;
             // 
@@ -161,10 +162,10 @@
             // 
             tableLayoutPanel1.SetColumnSpan(panChildView, 2);
             panChildView.Dock = DockStyle.Fill;
-            panChildView.Location = new Point(256, 39);
+            panChildView.Location = new Point(296, 39);
             panChildView.Margin = new Padding(0);
             panChildView.Name = "panChildView";
-            panChildView.Size = new Size(721, 456);
+            panChildView.Size = new Size(681, 456);
             panChildView.TabIndex = 3;
             // 
             // timerDataChecker

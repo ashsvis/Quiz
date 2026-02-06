@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Data;
 using System.Xml.Linq;
 
 namespace QuizHelper
@@ -250,21 +249,53 @@ namespace QuizHelper
             }
         }
 
+        private string idTournament = string.Empty;
+        private string idTour = string.Empty;
+        private string idQuestion = string.Empty;
+
         private void FillTree()
         {
+            if (tvTurnaments.SelectedNode != null)
+            {
+                idTournament = string.Empty;
+                idTour = string.Empty;
+                idQuestion = string.Empty;
+                if (tvTurnaments.SelectedNode.Tag is Tournament tournament1)
+                    idTournament = tournament1.id;
+                else if (tvTurnaments.SelectedNode.Tag is Tour tour1)
+                {
+                    if (tvTurnaments.SelectedNode.Parent.Tag is Tournament tournament2)
+                        idTournament = tournament2.id;
+                    idTour = tour1.id;
+                }
+                else if (tvTurnaments.SelectedNode.Tag is Question question1)
+                {
+                    if (tvTurnaments.SelectedNode.Parent.Parent.Tag is Tournament tournament3)
+                        idTournament = tournament3.id;
+                    if (tvTurnaments.SelectedNode.Parent.Tag is Tournament tour3)
+                        idTour = tour3.id;
+                    idQuestion = question1.questionId;
+                }
+            }
             tvTurnaments.Nodes.Clear();
             foreach (var tournament in tournaments)
             {
                 var nodeTournament = new TreeNode() { Text = tournament.title, Tag = tournament };
                 tvTurnaments.Nodes.Add(nodeTournament);
+                if (idTournament == tournament.id)
+                    tvTurnaments.SelectedNode = nodeTournament;
                 foreach (var tour in tournament.tours)
                 {
                     var nodeTour = new TreeNode() { Text = tour.title, Tag = tour };
                     nodeTournament.Nodes.Add(nodeTour);
+                    if (idTour == tour.id)
+                        tvTurnaments.SelectedNode = nodeTour;
                     foreach (var question in tour.questions)
                     {
-                        var nodeQuestion = new TreeNode() { Text = question.number, Tag = question };
+                        var nodeQuestion = new TreeNode() { Text = question.number + "-й вопрос", Tag = question };
                         nodeTour.Nodes.Add(nodeQuestion);
+                        if (idQuestion == question.questionId)
+                            tvTurnaments.SelectedNode = nodeQuestion;
                     }
                 }
             }

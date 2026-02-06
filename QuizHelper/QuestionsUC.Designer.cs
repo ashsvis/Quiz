@@ -30,6 +30,7 @@
         {
             lvTable = new ListView();
             columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             SuspendLayout();
             // 
@@ -37,8 +38,9 @@
             // 
             lvTable.BackColor = Color.Gainsboro;
             lvTable.BorderStyle = BorderStyle.FixedSingle;
-            lvTable.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader3 });
+            lvTable.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             lvTable.Dock = DockStyle.Fill;
+            lvTable.Font = new Font("Georgia", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             lvTable.FullRowSelect = true;
             lvTable.Location = new Point(0, 0);
             lvTable.MultiSelect = false;
@@ -52,7 +54,13 @@
             // columnHeader1
             // 
             columnHeader1.Text = "";
-            columnHeader1.Width = 40;
+            columnHeader1.Width = 0;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "";
+            columnHeader2.TextAlign = HorizontalAlignment.Right;
+            columnHeader2.Width = 35;
             // 
             // columnHeader3
             // 
@@ -74,5 +82,6 @@
         private ListView lvTable;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader2;
     }
 }
