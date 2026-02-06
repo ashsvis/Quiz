@@ -48,49 +48,58 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            flowLayoutPanel3 = new FlowLayoutPanel();
+            btnAddPicture = new Button();
+            pbQuestionsPicture = new PictureBox();
             tplGrid.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
+            flowLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbQuestionsPicture).BeginInit();
             SuspendLayout();
             // 
             // tplGrid
             // 
+            tplGrid.AutoScroll = true;
             tplGrid.ColumnCount = 1;
             tplGrid.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tplGrid.Controls.Add(tbComments, 0, 13);
-            tplGrid.Controls.Add(tbSources, 0, 11);
-            tplGrid.Controls.Add(tbAuthors, 0, 9);
-            tplGrid.Controls.Add(tbAnswer, 0, 7);
-            tplGrid.Controls.Add(tbQuestion, 0, 5);
+            tplGrid.Controls.Add(tbComments, 0, 14);
+            tplGrid.Controls.Add(tbSources, 0, 12);
+            tplGrid.Controls.Add(tbAuthors, 0, 10);
+            tplGrid.Controls.Add(tbAnswer, 0, 8);
+            tplGrid.Controls.Add(tbQuestion, 0, 6);
             tplGrid.Controls.Add(tbEditors, 0, 3);
             tplGrid.Controls.Add(tbTournament, 0, 0);
             tplGrid.Controls.Add(label1, 0, 2);
             tplGrid.Controls.Add(flowLayoutPanel1, 0, 1);
-            tplGrid.Controls.Add(label3, 0, 6);
+            tplGrid.Controls.Add(label3, 0, 7);
             tplGrid.Controls.Add(flowLayoutPanel2, 0, 4);
-            tplGrid.Controls.Add(label4, 0, 8);
-            tplGrid.Controls.Add(label5, 0, 10);
-            tplGrid.Controls.Add(label6, 0, 12);
+            tplGrid.Controls.Add(label4, 0, 9);
+            tplGrid.Controls.Add(label5, 0, 11);
+            tplGrid.Controls.Add(label6, 0, 13);
+            tplGrid.Controls.Add(flowLayoutPanel3, 0, 5);
             tplGrid.Dock = DockStyle.Fill;
             tplGrid.Location = new Point(0, 0);
             tplGrid.Margin = new Padding(4);
             tplGrid.Name = "tplGrid";
             tplGrid.Padding = new Padding(5);
-            tplGrid.RowCount = 14;
+            tplGrid.RowCount = 16;
             tplGrid.RowStyles.Add(new RowStyle());
             tplGrid.RowStyles.Add(new RowStyle());
             tplGrid.RowStyles.Add(new RowStyle());
-            tplGrid.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tplGrid.RowStyles.Add(new RowStyle());
-            tplGrid.RowStyles.Add(new RowStyle(SizeType.Percent, 41.6666679F));
+            tplGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
             tplGrid.RowStyles.Add(new RowStyle());
             tplGrid.RowStyles.Add(new RowStyle());
+            tplGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 160F));
             tplGrid.RowStyles.Add(new RowStyle());
             tplGrid.RowStyles.Add(new RowStyle());
             tplGrid.RowStyles.Add(new RowStyle());
-            tplGrid.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tplGrid.RowStyles.Add(new RowStyle());
-            tplGrid.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tplGrid.RowStyles.Add(new RowStyle());
+            tplGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tplGrid.RowStyles.Add(new RowStyle());
+            tplGrid.RowStyles.Add(new RowStyle(SizeType.Absolute, 80F));
+            tplGrid.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tplGrid.Size = new Size(1017, 680);
             tplGrid.TabIndex = 0;
             // 
@@ -101,14 +110,13 @@
             tbComments.BackColor = Color.WhiteSmoke;
             tbComments.BorderStyle = BorderStyle.None;
             tbComments.Dock = DockStyle.Fill;
-            tbComments.Location = new Point(5, 569);
+            tbComments.Location = new Point(5, 573);
             tbComments.Margin = new Padding(0);
             tbComments.Multiline = true;
             tbComments.Name = "tbComments";
             tbComments.ScrollBars = ScrollBars.Both;
-            tbComments.Size = new Size(1007, 106);
+            tbComments.Size = new Size(1007, 80);
             tbComments.TabIndex = 6;
-            tbComments.WordWrap = false;
             // 
             // tbSources
             // 
@@ -117,12 +125,12 @@
             tbSources.BackColor = Color.WhiteSmoke;
             tbSources.BorderStyle = BorderStyle.None;
             tbSources.Dock = DockStyle.Fill;
-            tbSources.Location = new Point(5, 483);
+            tbSources.Location = new Point(5, 497);
             tbSources.Margin = new Padding(0);
             tbSources.Multiline = true;
             tbSources.Name = "tbSources";
             tbSources.ScrollBars = ScrollBars.Both;
-            tbSources.Size = new Size(1007, 70);
+            tbSources.Size = new Size(1007, 60);
             tbSources.TabIndex = 5;
             tbSources.WordWrap = false;
             // 
@@ -131,7 +139,7 @@
             tbAuthors.BackColor = Color.WhiteSmoke;
             tbAuthors.BorderStyle = BorderStyle.None;
             tbAuthors.Dock = DockStyle.Fill;
-            tbAuthors.Location = new Point(5, 428);
+            tbAuthors.Location = new Point(5, 442);
             tbAuthors.Margin = new Padding(0);
             tbAuthors.Name = "tbAuthors";
             tbAuthors.Size = new Size(1007, 19);
@@ -142,7 +150,7 @@
             tbAnswer.BackColor = Color.WhiteSmoke;
             tbAnswer.BorderStyle = BorderStyle.None;
             tbAnswer.Dock = DockStyle.Fill;
-            tbAnswer.Location = new Point(5, 373);
+            tbAnswer.Location = new Point(5, 387);
             tbAnswer.Margin = new Padding(0);
             tbAnswer.Name = "tbAnswer";
             tbAnswer.Size = new Size(1007, 19);
@@ -155,14 +163,13 @@
             tbQuestion.BackColor = Color.WhiteSmoke;
             tbQuestion.BorderStyle = BorderStyle.None;
             tbQuestion.Dock = DockStyle.Fill;
-            tbQuestion.Location = new Point(5, 182);
+            tbQuestion.Location = new Point(5, 211);
             tbQuestion.Margin = new Padding(0);
             tbQuestion.Multiline = true;
             tbQuestion.Name = "tbQuestion";
             tbQuestion.ScrollBars = ScrollBars.Both;
-            tbQuestion.Size = new Size(1007, 175);
+            tbQuestion.Size = new Size(1007, 160);
             tbQuestion.TabIndex = 2;
-            tbQuestion.WordWrap = false;
             // 
             // tbEditors
             // 
@@ -176,9 +183,8 @@
             tbEditors.Multiline = true;
             tbEditors.Name = "tbEditors";
             tbEditors.ScrollBars = ScrollBars.Both;
-            tbEditors.Size = new Size(1007, 70);
+            tbEditors.Size = new Size(1007, 60);
             tbEditors.TabIndex = 0;
-            tbEditors.WordWrap = false;
             tbEditors.TextChanged += tbEditors_TextChanged;
             tbEditors.Validated += tbEditors_Validated;
             // 
@@ -249,7 +255,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Georgia", 9.75F);
-            label3.Location = new Point(9, 357);
+            label3.Location = new Point(9, 371);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(50, 16);
@@ -262,7 +268,7 @@
             flowLayoutPanel2.Controls.Add(lbQuestionNumber);
             flowLayoutPanel2.Controls.Add(tbQuestionNumber);
             flowLayoutPanel2.Controls.Add(label2);
-            flowLayoutPanel2.Location = new Point(9, 150);
+            flowLayoutPanel2.Location = new Point(9, 140);
             flowLayoutPanel2.Margin = new Padding(4);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(103, 28);
@@ -309,7 +315,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Georgia", 9.75F);
-            label4.Location = new Point(9, 412);
+            label4.Location = new Point(9, 426);
             label4.Margin = new Padding(4, 20, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(72, 16);
@@ -320,7 +326,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Georgia", 9.75F);
-            label5.Location = new Point(9, 467);
+            label5.Location = new Point(9, 481);
             label5.Margin = new Padding(4, 20, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(94, 16);
@@ -331,12 +337,45 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Georgia", 9.75F);
-            label6.Location = new Point(9, 553);
+            label6.Location = new Point(9, 557);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(102, 16);
             label6.TabIndex = 1;
             label6.Text = "Комментарии:";
+            // 
+            // flowLayoutPanel3
+            // 
+            flowLayoutPanel3.AutoSize = true;
+            flowLayoutPanel3.Controls.Add(btnAddPicture);
+            flowLayoutPanel3.Controls.Add(pbQuestionsPicture);
+            flowLayoutPanel3.Location = new Point(8, 175);
+            flowLayoutPanel3.Name = "flowLayoutPanel3";
+            flowLayoutPanel3.Size = new Size(342, 33);
+            flowLayoutPanel3.TabIndex = 8;
+            flowLayoutPanel3.WrapContents = false;
+            // 
+            // btnAddPicture
+            // 
+            btnAddPicture.Cursor = Cursors.Hand;
+            btnAddPicture.Font = new Font("Georgia", 9.75F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            btnAddPicture.Location = new Point(3, 3);
+            btnAddPicture.Name = "btnAddPicture";
+            btnAddPicture.Size = new Size(236, 27);
+            btnAddPicture.TabIndex = 0;
+            btnAddPicture.Text = "Вставить картинку из буфера обмена";
+            btnAddPicture.UseVisualStyleBackColor = true;
+            // 
+            // pbQuestionsPicture
+            // 
+            pbQuestionsPicture.Location = new Point(242, 0);
+            pbQuestionsPicture.Margin = new Padding(0);
+            pbQuestionsPicture.Name = "pbQuestionsPicture";
+            pbQuestionsPicture.Size = new Size(100, 27);
+            pbQuestionsPicture.SizeMode = PictureBoxSizeMode.AutoSize;
+            pbQuestionsPicture.TabIndex = 7;
+            pbQuestionsPicture.TabStop = false;
+            pbQuestionsPicture.Visible = false;
             // 
             // AnswerUC
             // 
@@ -355,6 +394,9 @@
             flowLayoutPanel1.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel2.PerformLayout();
+            flowLayoutPanel3.ResumeLayout(false);
+            flowLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbQuestionsPicture).EndInit();
             ResumeLayout(false);
         }
 
@@ -380,5 +422,8 @@
         private Label label5;
         private TextBox tbComments;
         private Label label6;
+        private PictureBox pbQuestionsPicture;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Button btnAddPicture;
     }
 }

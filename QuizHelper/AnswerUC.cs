@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static QuizHelper.QuizesUC;
+﻿using Google.Protobuf.WellKnownTypes;
 
 namespace QuizHelper
 {
@@ -21,6 +12,7 @@ namespace QuizHelper
         public event TournamentTitleChangedEventHandler? TournamentTitleChanged;
         public event TourTitleChangedEventHandler? TourTitleChanged;
         public event TourEditorsChangedEventHandler? TourEditorsChanged;
+        public event QuestionPictureChangedEventHandler? QuestionPictureChanged;
 
         private bool busy;
 
@@ -32,11 +24,61 @@ namespace QuizHelper
             lbQuestionsCount.Text = $"({tour.questions.Count} вопросов)";
             tbEditors.Text = tour.editors;
             tbQuestionNumber.Text = question.number;
-            tbQuestion.Text = question.question.Replace("\n", "\r\n");
+            var skipLen = 0;
+            if (question.questionImage != null)
+            {
+                btnAddPicture.Visible = false;
+                pbQuestionsPicture.Visible = true;
+                pbQuestionsPicture.Image = question.questionImage;
+            }
+            else if (question.question.StartsWith("(pic: "))
+            {
+                pbQuestionsPicture.Height = 25;
+                var picname = question.question[6..question.question.IndexOf(')')];
+                Image image = new Bitmap(200, 25);
+                using Graphics graphics = Graphics.FromImage(image);
+                using Font font = new("Arial Narrow", 12f, FontStyle.Regular, GraphicsUnit.Pixel);
+                graphics.DrawString(picname, font, Brushes.Gray, Point.Empty);
+                pbQuestionsPicture.Image = image;
+                pbQuestionsPicture.Cursor = Cursors.Hand;
+                pbQuestionsPicture.Click += (s, e) =>
+                {
+                    if (Clipboard.GetDataObject() is DataObject retrievedData && retrievedData.ContainsImage())
+                    {
+                        var image = retrievedData.GetImage();
+                        if (image != null)
+                        {
+                            question.questionImage = image;
+                            pbQuestionsPicture.Image = image;
+                            QuestionPictureChanged?.Invoke(this, new QuestionPictureEventArgs(image));
+                        }
+                    }
+                };
+                btnAddPicture.Click += (s, e) =>
+                {
+                    if (Clipboard.GetDataObject() is DataObject retrievedData && retrievedData.ContainsImage())
+                    {
+                        btnAddPicture.Visible = false;
+                        pbQuestionsPicture.Visible = true;
+                        var image = retrievedData.GetImage();
+                        if (image != null)
+                        {
+                            question.questionImage = image;
+                            pbQuestionsPicture.Image = image;
+                            QuestionPictureChanged?.Invoke(this, new QuestionPictureEventArgs(image));
+                        }
+                    }
+                };
+
+                skipLen = picname.Length + 8;
+            }
+            else
+                btnAddPicture.Visible = false;
+            tbQuestion.Text = question.question[skipLen..].Replace("\n", " ");
             tbAnswer.Text = question.answer;
             tbAuthors.Text = question.authors;
             tbSources.Text = question.sources.Replace("\n", "\r\n");
-            tbComments.Text = question.comments.Replace("\n", "\r\n");
+            tbComments.Text = question.comments.Replace("\n", " ");
             busy = false;
         }
 
@@ -101,7 +143,13 @@ namespace QuizHelper
         public string editors = editors;
     }
 
+    public class QuestionPictureEventArgs(Image image) : EventArgs
+    {
+        public Image image = image;
+    }
+
     public delegate void TournamentTitleChangedEventHandler(object sender, TourTitleEventArgs e);
     public delegate void TourTitleChangedEventHandler(object sender, TourTitleEventArgs e);
     public delegate void TourEditorsChangedEventHandler(object sender, TourEditorsEventArgs e);
+    public delegate void QuestionPictureChangedEventHandler(object sender, QuestionPictureEventArgs e);
 }

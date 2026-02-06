@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Drawing.Imaging;
 using System.Xml.Linq;
 
 namespace QuizHelper
@@ -115,7 +116,7 @@ namespace QuizHelper
             return Clipboard.GetDataObject() is DataObject retrievedData && retrievedData.ContainsText();
         }
 
-        private List<Tournament> tournaments = [];
+        private readonly List<Tournament> tournaments = [];
 
         private void PasteFromClipboard()
         {
@@ -309,6 +310,8 @@ namespace QuizHelper
             public string title = string.Empty;
             public string number = string.Empty;
             public string question = string.Empty;
+            [JsonConverter(typeof(ImageConverter))]
+            public Image? questionImage { get; set; }
             public string answer = string.Empty;
             public string authors = string.Empty;
             public string sources = string.Empty;
@@ -339,6 +342,51 @@ namespace QuizHelper
             public List<Tour> tours = [];
         }
 
+        public class ImageConverter : JsonConverter
+        {
+            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+            {
+                var base64 = (string)reader.Value;
+                // convert base64 to byte array, put that into memory stream and feed to image
+                return string.IsNullOrEmpty(base64) ? null : Image.FromStream(new MemoryStream(Convert.FromBase64String(base64)));
+            }
+
+            public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+            {
+                var image = (Image)value;
+                // save to memory stream in original format
+                var ms = new MemoryStream();
+                image.Save(ms, ImageFormat.Png);
+                ms.Position = 0;
+                byte[] imageBytes = ms.ToArray();
+                // write byte array, will be converted to base64 by JSON.NET
+                writer.WriteValue(imageBytes);
+            }
+
+            public override bool CanConvert(Type objectType)
+            {
+                return objectType == typeof(Image);
+            }
+
+            //public static string ConvertImageToBase64String(System.Drawing.Image image)
+            //{
+            //    var imageStream = new MemoryStream();
+            //    image.Save(imageStream, ImageFormat.Png);
+            //    imageStream.Position = 0;
+            //    var imageBytes = imageStream.ToArray();
+            //    return Convert.ToBase64String(imageBytes);
+            //}
+
+            //public static System.Drawing.Image ConvertBase64StringToImage(string imageBase64String)
+            //{
+            //    var imageBytes = Convert.FromBase64String(imageBase64String);
+            //    var imageStream = new MemoryStream(imageBytes, 0, imageBytes.Length);
+            //    imageStream.Write(imageBytes, 0, imageBytes.Length);
+            //    var image = System.Drawing.Image.FromStream(imageStream, true);
+            //    return image;
+            //}
+        }
+
         private void tvTurnaments_AfterSelect(object sender, TreeViewEventArgs e)
         {
             panChildView.Controls.Clear();
@@ -363,18 +411,28 @@ namespace QuizHelper
                     answerUC.TournamentTitleChanged += (o, arg) =>
                     {
                         tournament3.title = arg.title;
+                        SaveContent();
                         FillTree();
                     };
                     answerUC.TourTitleChanged += (o, arg) => 
                     {
                         tour3.title = arg.title;
+                        SaveContent();
                         FillTree();
                     };
                     answerUC.TourEditorsChanged += (o, arg) =>
                     {
                         tour3.editors = arg.editors;
+                        SaveContent();
                         FillTree();
                     };
+                    answerUC.QuestionPictureChanged += (o, arg) =>
+                    {
+                        question.questionImage = arg.image;
+                        SaveContent();
+                        FillTree();
+                    };
+
                     answerUC.UpdateTable(question, tour3, tournament3);
                     panChildView.Controls.Add(answerUC);
                 }
