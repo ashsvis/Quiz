@@ -16,5 +16,19 @@ namespace QuizHelper
         {
             InitializeComponent();
         }
+
+        public void UpdateTable(QuizesUC.Question question, QuizesUC.Tour tour, QuizesUC.Tournament tournament)
+        {
+            tbTournament.Text = tournament.title;
+            tbTour.Text = tour.title;
+            lbQuestionsCount.Text = $"({tour.questions.Count} вопросов)";
+            tbEditors.Text = tour.editors;
+            tbQuestionNumber.Text = question.number;
+            tbQuestion.Text = question.question.Replace("\n", "\r\n");
+            tbAnswer.Text = question.answer;
+            tbAuthors.Text = question.authors;
+            tbSources.Text = question.sources.Replace("\n", "\r\n");
+            tbComments.Text = question.comments.Replace("\n", "\r\n");
+        }
     }
 }
