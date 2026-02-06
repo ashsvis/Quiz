@@ -360,6 +360,21 @@ namespace QuizHelper
                 else if (node.Tag is Question question && node.Parent.Tag is Tour tour3 && node.Parent.Parent.Tag is Tournament tournament3)
                 {
                     AnswerUC answerUC = new() { Dock = DockStyle.Fill };
+                    answerUC.TournamentTitleChanged += (o, arg) =>
+                    {
+                        tournament3.title = arg.title;
+                        FillTree();
+                    };
+                    answerUC.TourTitleChanged += (o, arg) => 
+                    {
+                        tour3.title = arg.title;
+                        FillTree();
+                    };
+                    answerUC.TourEditorsChanged += (o, arg) =>
+                    {
+                        tour3.editors = arg.editors;
+                        FillTree();
+                    };
                     answerUC.UpdateTable(question, tour3, tournament3);
                     panChildView.Controls.Add(answerUC);
                 }

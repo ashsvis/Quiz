@@ -179,6 +179,8 @@
             tbEditors.Size = new Size(1007, 70);
             tbEditors.TabIndex = 0;
             tbEditors.WordWrap = false;
+            tbEditors.TextChanged += tbEditors_TextChanged;
+            tbEditors.Validated += tbEditors_Validated;
             // 
             // tbTournament
             // 
@@ -191,6 +193,8 @@
             tbTournament.Size = new Size(999, 19);
             tbTournament.TabIndex = 0;
             tbTournament.TextAlign = HorizontalAlignment.Center;
+            tbTournament.TextChanged += tbTournament_TextChanged;
+            tbTournament.Validated += tbTournament_Validated;
             // 
             // label1
             // 
@@ -227,6 +231,8 @@
             tbTour.Size = new Size(142, 19);
             tbTour.TabIndex = 0;
             tbTour.TextAlign = HorizontalAlignment.Center;
+            tbTour.TextChanged += tbTour_TextChanged;
+            tbTour.Validated += tbTour_Validated;
             // 
             // lbQuestionsCount
             // 
