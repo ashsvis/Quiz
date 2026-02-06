@@ -1,6 +1,4 @@
-﻿using Google.Protobuf.WellKnownTypes;
-
-namespace QuizHelper
+﻿namespace QuizHelper
 {
     public partial class AnswerUC : UserControl
     {
@@ -35,12 +33,12 @@ namespace QuizHelper
             {
                 pbQuestionsPicture.Height = 25;
                 var picname = question.question[6..question.question.IndexOf(')')];
-                Image image = new Bitmap(200, 25);
-                using Graphics graphics = Graphics.FromImage(image);
-                using Font font = new("Arial Narrow", 12f, FontStyle.Regular, GraphicsUnit.Pixel);
-                graphics.DrawString(picname, font, Brushes.Gray, Point.Empty);
-                pbQuestionsPicture.Image = image;
-                pbQuestionsPicture.Cursor = Cursors.Hand;
+                //Image image = new Bitmap(200, 25);
+                //using Graphics graphics = Graphics.FromImage(image);
+                //using Font font = new("Arial Narrow", 12f, FontStyle.Regular, GraphicsUnit.Pixel);
+                //graphics.DrawString(picname, font, Brushes.Gray, Point.Empty);
+                //pbQuestionsPicture.Image = image;
+                //pbQuestionsPicture.Cursor = Cursors.Hand;
                 pbQuestionsPicture.Click += (s, e) =>
                 {
                     if (Clipboard.GetDataObject() is DataObject retrievedData && retrievedData.ContainsImage())
