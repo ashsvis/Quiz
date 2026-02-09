@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Backgrounds\realistic-blue-paper-cut-background.jpg" />
+    <None Remove="Backgrounds\Вперёд.png" />
+    <None Remove="Backgrounds\Назад.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Backgrounds\realistic-blue-paper-cut-background.jpg" />
+    <Resource Include="Backgrounds\Вперёд.png" />
+    <Resource Include="Backgrounds\Назад.png" />
+  </ItemGroup>
+
+</Project>

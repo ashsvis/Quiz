@@ -1,0 +1,41 @@
+﻿<Page x:Class="QuizViewer.PageQuestion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuizViewer"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Вопрос">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Backgrounds/realistic-blue-paper-cut-background.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="0"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button x:Name="btnBack" Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0"
+                    Click="btnBack_Click" >
+                <StackPanel Orientation="Horizontal" Visibility="Visible" >
+                    <Image Source="Backgrounds/Назад.png" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button x:Name="btnForward" Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0"
+                    Click="btnForward_Click" >
+                <StackPanel Orientation="Horizontal" Visibility="Visible" >
+                    <Image Source="Backgrounds/Вперёд.png" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>
