@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizViewer"
         mc:Ignorable="d"
-        Title="Викторина &quot;Вопрос - ответ&quot;" Height="450" Width="800"
-        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded">
+        Title="Викторина &quot;Вопрос - ответ&quot;" Height="450" Width="797"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded" WindowStyle="None">
     <DockPanel>
         <Frame x:Name="mainFrame" Navigating="mainFrame_Navigating" NavigationUIVisibility="Hidden"/>
     </DockPanel>
