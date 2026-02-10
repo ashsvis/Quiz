@@ -34,36 +34,64 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Вопрос ... ?" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Justify" 
-                   Foreground="White" FontFamily="Segoe UI" FontSize="24"/>
+                   Foreground="White" FontFamily="Segoe UI" FontSize="58"/>
             <Image Grid.Row="1" Source="Backgrounds/Назад.png" />
         </Grid>
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="140"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="140"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="140"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="140"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Grid.Row="1" BorderThickness="1" BorderBrush="WhiteSmoke" CornerRadius="50" Padding="15" >
-                <TextBlock Text="Ответ A" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Justify" 
-                    Foreground="White" FontFamily="Segoe UI" FontSize="24"/>
+            <Border Grid.Row="1" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15" >
+                <Canvas>
+                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
+                    <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
+                        <TextBlock Text="А" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Border>
+                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                        <TextBlock Text="Ответ A" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
+                    </Border>
+                </Canvas>
             </Border>
-            <Border Grid.Row="3" BorderThickness="1" BorderBrush="WhiteSmoke" CornerRadius="50" Padding="15" >
-                <TextBlock Text="Ответ B" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Justify" 
-                   Foreground="White" FontFamily="Segoe UI" FontSize="24"/>
+            <Border Grid.Row="3" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15" >
+                <Canvas>
+                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
+                    <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
+                        <TextBlock Text="Б" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Border>
+                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                        <TextBlock Text="Ответ B" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
+                    </Border>
+                </Canvas>
             </Border>
-            <Border Grid.Row="5" BorderThickness="1" BorderBrush="WhiteSmoke" CornerRadius="50" Padding="15" >
-                <TextBlock Text="Ответ C" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Justify" 
-                   Foreground="White" FontFamily="Segoe UI" FontSize="24"/>
+            <Border Grid.Row="5" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15" >
+                <Canvas>
+                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
+                    <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
+                        <TextBlock Text="В" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Border>
+                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                        <TextBlock Text="Ответ C" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
+                    </Border>
+                </Canvas>
             </Border>
-            <Border Grid.Row="7" BorderThickness="1" BorderBrush="WhiteSmoke" CornerRadius="50" Padding="15" >
-                <TextBlock Text="Ответ D" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Justify" 
-                   Foreground="White" FontFamily="Segoe UI" FontSize="24"/>
+            <Border Grid.Row="7" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15" >
+                <Canvas>
+                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
+                    <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
+                        <TextBlock Text="Г" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Border>
+                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                        <TextBlock Text="Ответ D" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
+                    </Border>
+                </Canvas>
             </Border>
         </Grid>
         <TextBlock Grid.Row="3" Grid.Column="1" Text="Вопрос 4 из 18" 

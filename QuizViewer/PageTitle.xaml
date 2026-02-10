@@ -9,6 +9,9 @@
       Title="Начало">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Backgrounds/Волчек ЧГК.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" />

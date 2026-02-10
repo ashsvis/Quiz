@@ -10,12 +10,14 @@
 
   <ItemGroup>
     <None Remove="Backgrounds\realistic-blue-paper-cut-background.jpg" />
+    <None Remove="Backgrounds\Волчек ЧГК.jpg" />
     <None Remove="Backgrounds\Вперёд.png" />
     <None Remove="Backgrounds\Назад.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Backgrounds\realistic-blue-paper-cut-background.jpg" />
+    <Resource Include="Backgrounds\Волчек ЧГК.jpg" />
     <Resource Include="Backgrounds\Вперёд.png" />
     <Resource Include="Backgrounds\Назад.png" />
   </ItemGroup>
