@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:QuizViewer"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
-      Title="Вопрос">
+      Title="Вопрос" Loaded="Page_Loaded">
     <Page.DataContext>
         <local:PageQuestionModel/>
     </Page.DataContext>
@@ -30,7 +30,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="ВИКТОРИНА" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Left" 
-                   Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="24"/>
+                   Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="24" Margin="0, 20"/>
         <Grid Grid.Row="2" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

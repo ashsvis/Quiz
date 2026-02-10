@@ -1,4 +1,5 @@
-﻿namespace QuizViewer
+﻿
+namespace QuizViewer
 {
     public class PageQuestionModel : ObservableObject
     {
@@ -90,6 +91,17 @@
                 NotifyPropertyChanged();
             }
         }
-    }
 
+        public void Assign(Question? question)
+        {
+            if (question == null) return;
+            QuestionNumber = question.Number;
+            QuestionsCount = question.Total;
+            QuestionText = question.Title ?? "";
+            AnswerA = question.Answer[0];
+            AnswerB = question.Answer[1];
+            AnswerC = question.Answer[2];
+            AnswerD = question.Answer[3];
+        }
+    }
 }
