@@ -7,6 +7,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="Вопрос">
+    <Page.DataContext>
+        <local:PageQuestionModel/>
+    </Page.DataContext>
 
     <Grid>
         <Grid.Background>
@@ -33,9 +36,9 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Вопрос ... ?" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Justify" 
+            <TextBlock Grid.Row="0" Text="{Binding QuestionText}" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Justify" 
                    Foreground="White" FontFamily="Segoe UI" FontSize="58"/>
-            <Image Grid.Row="1" Source="Backgrounds/Назад.png" />
+            <Image Grid.Row="1" Source="{Binding QuestionImage}" />
         </Grid>
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.RowDefinitions>
@@ -50,53 +53,68 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Border Grid.Row="1" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15" >
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
                 <Canvas>
                     <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="А" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
                     <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
-                        <TextBlock Text="Ответ A" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding AnswerA}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>
             </Border>
             <Border Grid.Row="3" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15" >
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
                 <Canvas>
                     <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="Б" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
                     <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
-                        <TextBlock Text="Ответ B" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding AnswerB}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>
             </Border>
             <Border Grid.Row="5" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15" >
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
                 <Canvas>
                     <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="В" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
                     <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
-                        <TextBlock Text="Ответ C" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding AnswerC}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>
             </Border>
             <Border Grid.Row="7" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15" >
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
                 <Canvas>
                     <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="Г" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
                     <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
-                        <TextBlock Text="Ответ D" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding AnswerD}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>
             </Border>
         </Grid>
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="Вопрос 4 из 18" 
-                   TextWrapping="Wrap" TextAlignment="Left" HorizontalAlignment="Stretch" 
-                   Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="12"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Text="Вопрос " Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="12"/>
+            <TextBlock Text="{Binding QuestionNumber}" Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="12"/>
+            <TextBlock Text=" из " Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="12"/>
+            <TextBlock Text="{Binding QuestionsCount}" Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="12"/>
+        </StackPanel>
         <StackPanel Grid.Row="6" Grid.Column="0"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <Button x:Name="btnBack" Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0"
                     Click="btnBack_Click" >
