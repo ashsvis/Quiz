@@ -13,15 +13,20 @@
             <ImageBrush ImageSource="Backgrounds/Волчек ЧГК.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Grid.Column="2"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+        <Border Grid.Row="0" Grid.Column="1">
+            <Label Background="Transparent" Cursor="Hand" MouseDown="Label_MouseDown" BorderThickness="0,0,0,0" />
+        </Border>
+        <StackPanel Grid.Row="2" Grid.Column="2"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <Button Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0" Click="Forward_Click" >
                 <StackPanel Orientation="Horizontal" >
                     <Image Source="Backgrounds/Вперёд.png" />

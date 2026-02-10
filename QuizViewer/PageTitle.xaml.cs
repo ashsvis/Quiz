@@ -67,5 +67,10 @@ namespace QuizViewer
                     mainFrame.Navigate(new PageQuestion(mainFrame, question1));
             }
         }
+
+        private void Label_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            //
+        }
     }
 }
