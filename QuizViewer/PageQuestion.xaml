@@ -57,7 +57,11 @@
                     <DropShadowEffect/>
                 </Border.Effect>
                 <Canvas>
-                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
+                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" >
+                        <Ellipse.Effect>
+                            <DropShadowEffect/>
+                        </Ellipse.Effect>
+                    </Ellipse>
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="А" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
@@ -71,7 +75,11 @@
                     <DropShadowEffect/>
                 </Border.Effect>
                 <Canvas>
-                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
+                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" >
+                        <Ellipse.Effect>
+                            <DropShadowEffect/>
+                        </Ellipse.Effect>
+                    </Ellipse>
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="Б" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
@@ -85,7 +93,11 @@
                     <DropShadowEffect/>
                 </Border.Effect>
                 <Canvas>
-                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
+                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" >
+                        <Ellipse.Effect>
+                            <DropShadowEffect/>
+                        </Ellipse.Effect>
+                    </Ellipse>
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="В" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
@@ -99,7 +111,11 @@
                     <DropShadowEffect/>
                 </Border.Effect>
                 <Canvas>
-                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" />
+                    <Ellipse Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" Fill="White" >
+                        <Ellipse.Effect>
+                            <DropShadowEffect/>
+                        </Ellipse.Effect>
+                    </Ellipse>
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="Г" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
@@ -116,14 +132,20 @@
             <TextBlock Text="{Binding QuestionsCount}" Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="12"/>
         </StackPanel>
         <StackPanel Grid.Row="6" Grid.Column="0"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <StackPanel.Effect>
+                <DropShadowEffect/>
+            </StackPanel.Effect>
             <Button x:Name="btnBack" Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0"
                     Click="btnBack_Click" >
                 <StackPanel Orientation="Horizontal" Visibility="Visible" >
-                    <Image Source="Backgrounds/Назад.png" />
+                    <Image Source="Backgrounds/Назад.png"/>
                 </StackPanel>
             </Button>
         </StackPanel>
         <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <StackPanel.Effect>
+                <DropShadowEffect/>
+            </StackPanel.Effect>
             <Button x:Name="btnForward" Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0"
                     Click="btnForward_Click" >
                 <StackPanel Orientation="Horizontal" Visibility="Visible" >
