@@ -10,16 +10,18 @@
     <Page.DataContext>
         <local:PageQuestionModel/>
     </Page.DataContext>
-
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Page.Resources>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Backgrounds/realistic-blue-paper-cut-background.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="48" />
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="48" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -27,7 +29,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="48"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="ВИКТОРИНА" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Left" 
                    Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="24" Margin="0, 20"/>
@@ -131,18 +133,20 @@
             <TextBlock Text=" из " Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="12"/>
             <TextBlock Text="{Binding QuestionsCount}" Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="12"/>
         </StackPanel>
-        <StackPanel Grid.Row="6" Grid.Column="0"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="6" Grid.Column="0"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                    Visibility="{Binding PrevQuestionExists, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}">
             <StackPanel.Effect>
                 <DropShadowEffect/>
             </StackPanel.Effect>
             <Button x:Name="btnBack" Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0"
                     Click="btnBack_Click" >
-                <StackPanel Orientation="Horizontal" Visibility="Visible" >
+                <StackPanel Orientation="Horizontal" >
                     <Image Source="Backgrounds/Назад.png"/>
                 </StackPanel>
             </Button>
         </StackPanel>
-        <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="6" Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                    Visibility="{Binding NextQuestionExists, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}">
             <StackPanel.Effect>
                 <DropShadowEffect/>
             </StackPanel.Effect>

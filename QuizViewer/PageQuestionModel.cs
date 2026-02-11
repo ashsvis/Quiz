@@ -11,6 +11,9 @@ namespace QuizViewer
         private object? questionImage;
         private int questionNumber;
         private int questionsCount;
+        private Question? question;
+        private bool prevQuestionExists;
+        private bool nextQuestionExists;
 
         public int QuestionNumber 
         { 
@@ -92,8 +95,29 @@ namespace QuizViewer
             }
         }
 
+        public bool PrevQuestionExists 
+        { 
+            get => prevQuestionExists; 
+            set 
+            { 
+                prevQuestionExists = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public bool NextQuestionExists 
+        { 
+            get => nextQuestionExists; 
+            set 
+            { 
+                nextQuestionExists = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         public void Assign(Question? question)
         {
+            this.question = question;
             if (question == null) return;
             QuestionNumber = question.Number;
             QuestionsCount = question.Total;
@@ -102,6 +126,8 @@ namespace QuizViewer
             AnswerB = question.Answer[1];
             AnswerC = question.Answer[2];
             AnswerD = question.Answer[3];
+            PrevQuestionExists = question.PrevQuestion != null;
+            NextQuestionExists = question.NextQuestion != null;
         }
     }
 }
