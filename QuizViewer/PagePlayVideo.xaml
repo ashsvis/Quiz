@@ -1,0 +1,17 @@
+﻿<Page x:Class="QuizViewer.PagePlayVideo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QuizViewer"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1360"
+      Title="PagePlayVideo">
+
+    <Grid Margin="0" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <MediaElement Source="" LoadedBehavior="Manual" Name="mePlayer" />
+    </Grid>
+</Page>

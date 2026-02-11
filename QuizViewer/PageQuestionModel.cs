@@ -3,17 +3,21 @@ namespace QuizViewer
 {
     public class PageQuestionModel : ObservableObject
     {
-        private string questionText = "Вопрос?"; //string.Empty;
-        private string answerA = "Ответ 1"; //string.Empty;
-        private string answerB = "Ответ 2"; //string.Empty;
-        private string answerC = "Ответ 3"; //string.Empty;
-        private string answerD = "Ответ 4"; //string.Empty;
+        private Question? question;
+        private string questionText = "Вопрос?";
+        private string answerA = "Ответ 1";
+        private string answerB = "Ответ 2";
+        private string answerC = "Ответ 3";
+        private string answerD = "Ответ 4";
         private object? questionImage;
         private int questionNumber;
         private int questionsCount;
-        private Question? question;
-        private bool prevQuestionExists;
-        private bool nextQuestionExists;
+        private bool prevQuestionExists = true;
+        private bool nextQuestionExists = true;
+        private bool answerAexists = true;
+        private bool answerBexists = true;
+        private bool answerCexists = true;
+        private bool answerDexists = true;
 
         public int QuestionNumber 
         { 
@@ -115,6 +119,46 @@ namespace QuizViewer
             }
         }
 
+        public bool AnswerAexists
+        {
+            get => answerAexists;
+            set
+            {
+                answerAexists = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public bool AnswerBexists
+        {
+            get => answerBexists;
+            set
+            {
+                answerBexists = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public bool AnswerCexists
+        {
+            get => answerCexists;
+            set
+            {
+                answerCexists = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        public bool AnswerDexists
+        {
+            get => answerDexists;
+            set
+            {
+                answerDexists = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         public void Assign(Question? question)
         {
             this.question = question;
@@ -128,6 +172,10 @@ namespace QuizViewer
             AnswerD = question.Answer[3];
             PrevQuestionExists = question.PrevQuestion != null;
             NextQuestionExists = question.NextQuestion != null;
+            AnswerAexists = !string.IsNullOrEmpty(AnswerA);
+            AnswerBexists = !string.IsNullOrEmpty(AnswerB);
+            AnswerCexists = !string.IsNullOrEmpty(AnswerC);
+            AnswerDexists = !string.IsNullOrEmpty(AnswerD);
         }
     }
 }

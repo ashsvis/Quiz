@@ -20,7 +20,9 @@
     <Resource Include="Backgrounds\realistic-blue-paper-cut-background.jpg" />
     <Resource Include="Backgrounds\Волчек ЧГК.jpg" />
     <Resource Include="Backgrounds\Вперёд.png" />
-    <Resource Include="Backgrounds\Запуск волчка.mp4" />
+    <Content Include="Media\Запуск волчка.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Backgrounds\Назад.png" />
   </ItemGroup>
 

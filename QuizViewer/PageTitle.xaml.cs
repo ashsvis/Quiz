@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Linq;
 
@@ -70,7 +71,10 @@ namespace QuizViewer
 
         private void Label_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            //
+            // mePlayer.Stop();
+            var file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\Запуск волчка.mp4");
+            if (File.Exists(file))
+                mainFrame.Navigate(new PagePlayVideo(this, 7f, file, mainFrame, false));
         }
     }
 }
