@@ -8,6 +8,8 @@ namespace QuizViewer
         public int Totaltours;
         public Tour? FirstTour;
         public Question? CurrentQuestion;
+        public bool IsWinQuestion;
+
         public int ExpertsScore = 0;
         public int ViewersScore = 0;
 
@@ -34,18 +36,23 @@ namespace QuizViewer
             switch (choose)
             {
                 case "A":
+                    result = Root.Tournament.CurrentQuestion.Answers[0].IsWin;
                     break;
                 case "B":
+                    result = Root.Tournament.CurrentQuestion.Answers[1].IsWin;
                     break;
                 case "C":
+                    result = Root.Tournament.CurrentQuestion.Answers[2].IsWin;
                     break;
                 case "D":
+                    result = Root.Tournament.CurrentQuestion.Answers[3].IsWin;
                     break;
             }
             if (result)
                 Root.Tournament.ExpertsScore += 1;
             else
                 Root.Tournament.ViewersScore += 1;
+            Root.Tournament.IsWinQuestion = result;
             return result;
         }
     }

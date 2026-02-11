@@ -4,7 +4,7 @@
 	  <Question>
 		  <Title>Вопрос 1</Title>
 		  <Image></Image>
-		  <Answer>1</Answer>
+		  <Answer IsWin="True">1</Answer>
 		  <Answer>2</Answer>
 		  <Answer>3</Answer>
 		  <Answer>4</Answer>
@@ -13,7 +13,7 @@
 		  <Title>Вопрос 2</Title>
 		  <Image></Image>
 		  <Answer>5</Answer>
-		  <Answer>6</Answer>
+		  <Answer IsWin="True">6</Answer>
 		  <Answer>7</Answer>
 		  <Answer>8</Answer>
 	  </Question>
@@ -23,7 +23,7 @@
 		  <Answer>9</Answer>
 		  <Answer>10</Answer>
 		  <Answer>11</Answer>
-		  <Answer>12</Answer>
+		  <Answer IsWin="True">12</Answer>
 	  </Question>
   </Tour>
 </Tournament>

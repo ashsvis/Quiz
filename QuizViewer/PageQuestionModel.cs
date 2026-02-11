@@ -5,10 +5,6 @@ namespace QuizViewer
     {
         private Question? question;
         private string questionText = "Вопрос?";
-        private string answerA = "Ответ 1";
-        private string answerB = "Ответ 2";
-        private string answerC = "Ответ 3";
-        private string answerD = "Ответ 4";
         private object? questionImage;
         private int questionNumber;
         private int questionsCount;
@@ -73,41 +69,52 @@ namespace QuizViewer
 
         public string AnswerA
         { 
-            get => answerA; 
+            get => $"{question?.Answers[0].Title}"; 
             set 
-            { 
-                answerA = value;
-                NotifyPropertyChanged();
+            {
+                if (question != null)
+                {
+                    question.Answers[0].Title = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
 
         public string AnswerB
         {
-            get => answerB;
+            get => $"{question?.Answers[1].Title}";
             set
             {
-                answerB = value;
-                NotifyPropertyChanged();
+                if (question != null)
+                {
+                    question.Answers[1].Title = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
-
         public string AnswerC
         {
-            get => answerC;
+            get => $"{question?.Answers[2].Title}";
             set
             {
-                answerC = value;
-                NotifyPropertyChanged();
+                if (question != null)
+                {
+                    question.Answers[2].Title = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
 
         public string AnswerD
         {
-            get => answerD;
+            get => $"{question?.Answers[3].Title}";
             set
             {
-                answerD = value;
-                NotifyPropertyChanged();
+                if (question != null)
+                {
+                    question.Answers[3].Title = value;
+                    NotifyPropertyChanged();
+                }
             }
         }
 
@@ -178,10 +185,10 @@ namespace QuizViewer
             QuestionNumber = question.Number;
             QuestionsCount = question.Total;
             QuestionText = question.Title ?? "";
-            AnswerA = question.Answer[0];
-            AnswerB = question.Answer[1];
-            AnswerC = question.Answer[2];
-            AnswerD = question.Answer[3];
+            AnswerA = $"{question.Answers[0].Title}";
+            AnswerB = $"{question.Answers[1].Title}";
+            AnswerC = $"{question.Answers[2].Title}";
+            AnswerD = $"{question.Answers[3].Title}";
             PrevQuestionExists = question.PrevQuestion != null;
             NextQuestionExists = question.NextQuestion != null;
             AnswerAexists = !string.IsNullOrEmpty(AnswerA);

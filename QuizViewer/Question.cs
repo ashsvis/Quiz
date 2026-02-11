@@ -1,4 +1,6 @@
-﻿namespace QuizViewer
+﻿using System.Windows.Media;
+
+namespace QuizViewer
 {
     public class Question
     {
@@ -6,7 +8,7 @@
         public int Total;
         public string? Title;
         public object? Image;
-        public string[] Answer = ["", "", "", ""];
+        public Answer[] Answers = [new Answer(), new Answer(), new Answer(), new Answer()];
         public int AnswerIndex;
         public Question? PrevQuestion;
         public Question? NextQuestion;

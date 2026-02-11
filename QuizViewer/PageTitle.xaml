@@ -83,5 +83,6 @@
                 </StackPanel>
             </Button>
         </StackPanel>
+        <MediaElement Source="" LoadedBehavior="Manual" Name="soundPlayer" />
     </Grid>
 </Page>

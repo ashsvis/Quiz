@@ -14,22 +14,94 @@
     <None Remove="Backgrounds\Вперёд.png" />
     <None Remove="Backgrounds\Запуск волчка.mp4" />
     <None Remove="Backgrounds\Назад.png" />
+    <None Remove="Media\chgk2_gong.mp3" />
+    <None Remove="Media\chgk2_no1.mp3" />
+    <None Remove="Media\chgk2_no3.mp3" />
     <None Remove="Media\chgk2_otvet.mp3" />
+    <None Remove="Media\chgk2_owl.mp3" />
+    <None Remove="Media\chgk2_sig1.mp3" />
+    <None Remove="Media\chgk2_sig2.mp3" />
+    <None Remove="Media\chgk2_sig3.mp3" />
+    <None Remove="Media\chgk2_yes1.mp3" />
+    <None Remove="Media\ending.mp3" />
+    <None Remove="Media\gong-1.mp3" />
+    <None Remove="Media\intro-old-version.mp3" />
+    <None Remove="Media\meeting.mp3" />
     <None Remove="Media\nextquestion.mp3" />
+    <None Remove="Media\pause1.mp3" />
+    <None Remove="Media\pause2.mp3" />
+    <None Remove="Media\pause3.mp3" />
+    <None Remove="Media\pause4.mp3" />
+    <None Remove="Media\pobediteli.mp3" />
     <None Remove="Media\volchok.mp3" />
+    <None Remove="Media\yashik.mp3" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Backgrounds\realistic-blue-paper-cut-background.jpg" />
     <Resource Include="Backgrounds\Волчек ЧГК.jpg" />
     <Resource Include="Backgrounds\Вперёд.png" />
+    <Content Include="Media\chgk2_gong.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\chgk2_no1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\chgk2_no3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Media\chgk2_otvet.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\chgk2_owl.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\chgk2_sig1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\chgk2_sig2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\chgk2_sig3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\chgk2_yes1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\ending.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\gong-1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\intro-old-version.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\meeting.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Media\nextquestion.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Media\pause1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\pause2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\pause3.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\pause4.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\pobediteli.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Media\volchok.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\yashik.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Media\Запуск волчка.mp4">

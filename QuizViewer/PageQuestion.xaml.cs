@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace QuizViewer
 {
@@ -12,7 +13,8 @@ namespace QuizViewer
     {
         private readonly Frame mainFrame;
         private readonly PageQuestionModel model;
-        private Action? chooseAnswer;
+        private readonly Queue<Action> actions = [];
+        private readonly DispatcherTimer timer;
 
         public PageQuestion(Frame mainFrame)
         {
@@ -21,6 +23,18 @@ namespace QuizViewer
             model = (PageQuestionModel)DataContext;
             soundPlayer.MediaOpened += SoundPlayer_MediaOpened;
             soundPlayer.MediaEnded += SoundPlayer_MediaEnded;
+            timer = new DispatcherTimer
+            {
+                Interval = new TimeSpan(0, 0, 4)
+            };
+            timer.Tick += Timer_Tick;
+        }
+
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            timer.Stop();
+            if (Tournament.GoNextQuestion())
+                mainFrame.Navigate(new PageTitle(mainFrame, Root.Tournament.IsWinQuestion ? "chgk2_yes1.mp3" : "chgk2_no1.mp3"));
         }
 
         private void SoundPlayer_MediaOpened(object sender, RoutedEventArgs e)
@@ -31,7 +45,11 @@ namespace QuizViewer
         private void SoundPlayer_MediaEnded(object sender, RoutedEventArgs e)
         {
             model.Enabled = true;
-            chooseAnswer?.Invoke();
+            if (actions.Count > 0)
+            {
+                var action = actions.Dequeue();
+                action.Invoke();
+            }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -54,47 +72,35 @@ namespace QuizViewer
             }
         }
 
-        private void btnBack_Click(object sender, RoutedEventArgs e)
+        private void CheckAnswer(string choose, Border btnAnswer)
         {
-            if (Tournament.GoPrevQuestion())
-                mainFrame.Navigate(new PageTitle(mainFrame));
-        }
-
-        private void btnForward_Click(object sender, RoutedEventArgs e)
-        {
-            if (Tournament.GoNextQuestion())
-                mainFrame.Navigate(new PageTitle(mainFrame));
-        }
-
-        private void CheckAnswer(string choose)
-        {
+            btnAnswer.Background = Brushes.Silver;
             SoundFile("chgk2_otvet.mp3");
-            chooseAnswer = new Action(() =>
+            actions.Enqueue(new Action(() =>
             {
-                Tournament.CheckAnswer(choose);
-                if (Tournament.GoNextQuestion())
-                    mainFrame.Navigate(new PageTitle(mainFrame));
-            });
+                btnAnswer.Background = Tournament.CheckAnswer(choose) ? Brushes.Lime : Brushes.Red;
+                timer.Start();
+            }));
         }
 
         private void btnAnswerA_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            CheckAnswer("A");
+            CheckAnswer("A", btnAnswerA);
         }
 
         private void btnAnswerB_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            CheckAnswer("B");
+            CheckAnswer("B", btnAnswerB);
         }
 
         private void btnAnswerC_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            CheckAnswer("C");
+            CheckAnswer("C", btnAnswerC);
         }
 
         private void btnAnswerD_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            CheckAnswer("D");
+            CheckAnswer("D", btnAnswerD);
         }
     }
 }

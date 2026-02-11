@@ -147,7 +147,7 @@
                 <DropShadowEffect/>
             </StackPanel.Effect>
             <Button x:Name="btnBack" Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0"
-                    Click="btnBack_Click" Visibility="Hidden" >
+                    Visibility="Hidden" >
                 <StackPanel Orientation="Horizontal" >
                     <Image Source="Backgrounds/Назад.png"/>
                 </StackPanel>
@@ -159,7 +159,7 @@
                 <DropShadowEffect/>
             </StackPanel.Effect>
             <Button x:Name="btnForward" Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0"
-                    Click="btnForward_Click" Visibility="Hidden" >
+                    Visibility="Hidden" >
                 <StackPanel Orientation="Horizontal" Visibility="Visible" >
                     <Image Source="Backgrounds/Вперёд.png" />
                 </StackPanel>

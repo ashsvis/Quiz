@@ -13,11 +13,15 @@ namespace QuizViewer
         private readonly Frame mainFrame;
         private readonly PageTurnamentModel model;
 
-        public PageTitle(Frame mainFrame)
+        public PageTitle(Frame mainFrame, string soundfile = "")
         {
             InitializeComponent();
             this.mainFrame = mainFrame;
             model = (PageTurnamentModel)DataContext;
+            if (!string.IsNullOrEmpty(soundfile)) 
+            { 
+                SoundFile(soundfile);
+            }
         }
 
         private void Forward_Click(object sender, RoutedEventArgs e)
@@ -32,6 +36,17 @@ namespace QuizViewer
             var soundfile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\volchok.mp3");
             if (File.Exists(videofile) && File.Exists(soundfile))
                 mainFrame.Navigate(new PagePlayVideo(new PageQuestion(mainFrame), 7f, videofile, mainFrame, false, soundfile));
+        }
+
+        private void SoundFile(string filename)
+        {
+            var soundfile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\" + filename);
+            if (File.Exists(soundfile))
+            {
+                soundPlayer.Stop();
+                soundPlayer.Source = new Uri(soundfile);
+                soundPlayer.Play();
+            }
         }
     }
 }

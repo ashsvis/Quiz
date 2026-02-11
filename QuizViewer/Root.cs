@@ -39,7 +39,9 @@ namespace QuizViewer
                         var nanswer = 0;
                         foreach (XElement xAnswer in xQuestion.Elements("Answer"))
                         {
-                            quest.Answer[nanswer++] = xAnswer.Value;
+                            quest.Answers[nanswer].IsWin = xAnswer.Attribute("IsWin")?.Value == "True";
+                            quest.Answers[nanswer].Title = xAnswer.Value;
+                            nanswer++;
                             if (nanswer > 3) break;
                         }
                     }
