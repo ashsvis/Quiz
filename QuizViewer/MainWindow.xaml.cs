@@ -20,6 +20,7 @@ namespace QuizViewer
         public MainWindow()
         {
             InitializeComponent();
+            Root.Init();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

@@ -7,7 +7,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Начало">
-
+    <Page.DataContext>
+        <local:PageTurnamentModel/>
+    </Page.DataContext>
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Backgrounds/Волчек ЧГК.jpg"/>

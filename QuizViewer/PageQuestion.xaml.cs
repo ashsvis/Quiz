@@ -9,33 +9,30 @@ namespace QuizViewer
     public partial class PageQuestion : Page
     {
         private readonly Frame mainFrame;
-        private readonly Question? question;
         private readonly PageQuestionModel model;
 
-        public PageQuestion(Frame mainFrame, Question? question)
+        public PageQuestion(Frame mainFrame)
         {
             InitializeComponent();
             this.mainFrame = mainFrame;
-            this.question = question;
             model = (PageQuestionModel)DataContext;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //mePlayer.Play();
-            model.Assign(question);
+            model.Assign(Root.Tournament.CurrentQuestion);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            if (question == null || question.PrevQuestion == null) return;
-            mainFrame.Navigate(new PageQuestion(mainFrame, question.PrevQuestion));
+            Tournament.GoPrevQuestion();
+            mainFrame.Navigate(new PageQuestion(mainFrame));
         }
 
         private void btnForward_Click(object sender, RoutedEventArgs e)
         {
-            if (question == null || question.NextQuestion == null) return;
-            mainFrame.Navigate(new PageQuestion(mainFrame, question.NextQuestion));
+            Tournament.GoNextQuestion();
+            mainFrame.Navigate(new PageQuestion(mainFrame));
         }
     }
 }
