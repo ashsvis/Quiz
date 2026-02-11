@@ -20,11 +20,6 @@ namespace QuizViewer
             model = (PageTurnamentModel)DataContext;
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            //mePlayer.Play();
-        }
-
         private void Forward_Click(object sender, RoutedEventArgs e)
         {
             if (PageTurnamentModel.CurrentQuestion != null)
@@ -33,11 +28,10 @@ namespace QuizViewer
 
         private void Label_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            // mePlayer.Stop();
             var videofile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\Запуск волчка.mp4");
             var soundfile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\volchok.mp3");
             if (File.Exists(videofile) && File.Exists(soundfile))
-                mainFrame.Navigate(new PagePlayVideo(this, 7f, videofile, mainFrame, false, soundfile));
+                mainFrame.Navigate(new PagePlayVideo(new PageQuestion(mainFrame), 7f, videofile, mainFrame, false, soundfile));
         }
     }
 }

@@ -26,13 +26,41 @@ namespace QuizViewer
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             Tournament.GoPrevQuestion();
-            mainFrame.Navigate(new PageQuestion(mainFrame));
+            mainFrame.Navigate(new PageTitle(mainFrame));
         }
 
         private void btnForward_Click(object sender, RoutedEventArgs e)
         {
             Tournament.GoNextQuestion();
-            mainFrame.Navigate(new PageQuestion(mainFrame));
+            mainFrame.Navigate(new PageTitle(mainFrame));
+        }
+
+        private void btnAnswerA_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Tournament.CheckAnswer("A");
+            Tournament.GoNextQuestion();
+            mainFrame.Navigate(new PageTitle(mainFrame));
+        }
+
+        private void btnAnswerB_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Tournament.CheckAnswer("B");
+            Tournament.GoNextQuestion();
+            mainFrame.Navigate(new PageTitle(mainFrame));
+        }
+
+        private void btnAnswerC_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Tournament.CheckAnswer("C");
+            Tournament.GoNextQuestion();
+            mainFrame.Navigate(new PageTitle(mainFrame));
+        }
+
+        private void btnAnswerD_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Tournament.CheckAnswer("D");
+            Tournament.GoNextQuestion();
+            mainFrame.Navigate(new PageTitle(mainFrame));
         }
     }
 }

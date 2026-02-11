@@ -55,7 +55,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Border Grid.Row="1" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15"
-                    Visibility="{Binding AnswerAexists, Converter={StaticResource BoolToVis}}">
+                    Visibility="{Binding AnswerAexists, Converter={StaticResource BoolToVis}}" Cursor="Hand" x:Name="btnAnswerA" MouseDown="btnAnswerA_MouseDown">
                 <Border.Effect>
                     <DropShadowEffect/>
                 </Border.Effect>
@@ -65,16 +65,16 @@
                             <DropShadowEffect/>
                         </Ellipse.Effect>
                     </Ellipse>
-                    <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
+                    <Border Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="А" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
-                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                    <Border Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
                         <TextBlock Text="{Binding AnswerA}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>
             </Border>
             <Border Grid.Row="3" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15"
-                    Visibility="{Binding AnswerBexists, Converter={StaticResource BoolToVis}}">
+                    Visibility="{Binding AnswerBexists, Converter={StaticResource BoolToVis}}" Cursor="Hand" x:Name="btnAnswerB" MouseDown="btnAnswerB_MouseDown">
                 <Border.Effect>
                     <DropShadowEffect/>
                 </Border.Effect>
@@ -84,16 +84,16 @@
                             <DropShadowEffect/>
                         </Ellipse.Effect>
                     </Ellipse>
-                    <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
+                    <Border Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="Б" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
-                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                    <Border Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
                         <TextBlock Text="{Binding AnswerB}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>
             </Border>
             <Border Grid.Row="5" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15"
-                    Visibility="{Binding AnswerCexists, Converter={StaticResource BoolToVis}}">
+                    Visibility="{Binding AnswerCexists, Converter={StaticResource BoolToVis}}" Cursor="Hand" x:Name="btnAnswerC" MouseDown="btnAnswerC_MouseDown">
                 <Border.Effect>
                     <DropShadowEffect/>
                 </Border.Effect>
@@ -112,7 +112,7 @@
                 </Canvas>
             </Border>
             <Border Grid.Row="7" BorderThickness="5" BorderBrush="WhiteSmoke" Background="#FF0322B4" CornerRadius="70,50,50,70" Padding="15"
-                    Visibility="{Binding AnswerDexists, Converter={StaticResource BoolToVis}}">
+                    Visibility="{Binding AnswerDexists, Converter={StaticResource BoolToVis}}" Cursor="Hand" x:Name="btnAnswerD" MouseDown="btnAnswerD_MouseDown">
                 <Border.Effect>
                     <DropShadowEffect/>
                 </Border.Effect>

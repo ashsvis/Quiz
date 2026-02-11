@@ -1,4 +1,5 @@
 ﻿
+
 namespace QuizViewer
 {
     public class Tournament
@@ -18,6 +19,22 @@ namespace QuizViewer
         {
             if (Root.Tournament.CurrentQuestion == null || Root.Tournament.CurrentQuestion.NextQuestion == null) return;
             Root.Tournament.CurrentQuestion = Root.Tournament.CurrentQuestion.NextQuestion;
+        }
+
+        public static void CheckAnswer(string choose)
+        {
+            if (Root.Tournament.CurrentQuestion == null) return;
+            switch (choose)
+            {
+                case "A":
+                    break;
+                case "B":
+                    break;
+                case "C":
+                    break;
+                case "D":
+                    break;
+            }
         }
     }
 }
