@@ -1,6 +1,4 @@
-﻿using System.Windows.Media;
-
-namespace QuizViewer
+﻿namespace QuizViewer
 {
     public class Question
     {

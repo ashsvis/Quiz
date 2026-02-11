@@ -19,8 +19,8 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="48" />
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="3.3*" />
             <ColumnDefinition Width="48" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -35,12 +35,17 @@
                    Foreground="WhiteSmoke" FontFamily="Comic Sans MS" FontSize="24" Margin="0, 20"/>
         <Grid Grid.Row="2" Grid.Column="1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="{Binding QuestionText}" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Justify" 
-                   Foreground="White" FontFamily="Segoe UI" FontSize="58"/>
-            <Image Grid.Row="1" Source="{Binding QuestionImage}" />
+            <TextBlock Grid.Row="1" Text="{Binding QuestionText}" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" 
+                   Foreground="White" FontFamily="Segoe UI" FontSize="65">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <Image Grid.Row="2" Source="{Binding QuestionImage}" Visibility="Collapsed" />
         </Grid>
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.RowDefinitions>
@@ -69,7 +74,7 @@
                     <Border Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="А" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
-                    <Border Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                    <Border Canvas.Left="160" Canvas.Top="-20" Width="600" Height="140" >
                         <TextBlock Text="{Binding AnswerA}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>
@@ -89,7 +94,7 @@
                     <Border Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="Б" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
-                    <Border Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                    <Border Canvas.Left="160" Canvas.Top="-20" Width="600" Height="140" >
                         <TextBlock Text="{Binding AnswerB}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>
@@ -109,7 +114,7 @@
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="В" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
-                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="600" Height="140" >
                         <TextBlock Text="{Binding AnswerC}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>
@@ -129,7 +134,7 @@
                     <Border  Canvas.Left="-20" Canvas.Top="-20" Width="140" Height="140" >
                         <TextBlock Text="Г" Foreground="#FF0322B4" FontFamily="Arial" FontWeight="Bold" FontSize="72" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
-                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="500" Height="140" >
+                    <Border  Canvas.Left="160" Canvas.Top="-20" Width="600" Height="140" >
                         <TextBlock Text="{Binding AnswerD}" Foreground="White" FontFamily="Segoe UI" FontSize="48" VerticalAlignment="Center" />
                     </Border>
                 </Canvas>

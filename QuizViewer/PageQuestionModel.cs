@@ -10,6 +10,10 @@ namespace QuizViewer
         private int questionsCount;
         private bool prevQuestionExists = true;
         private bool nextQuestionExists = true;
+        private string? answerA = "Ответ1";
+        private string? answerB = "Ответ2";
+        private string? answerC = "Ответ3";
+        private string? answerD = "Ответ4";
         private bool answerAexists = true;
         private bool answerBexists = true;
         private bool answerCexists = true;
@@ -69,52 +73,41 @@ namespace QuizViewer
 
         public string AnswerA
         { 
-            get => $"{question?.Answers[0].Title}"; 
-            set 
+            get => answerA ?? "";
+            set
             {
-                if (question != null)
-                {
-                    question.Answers[0].Title = value;
-                    NotifyPropertyChanged();
-                }
+                answerA = value;
+                NotifyPropertyChanged();
             }
         }
 
         public string AnswerB
         {
-            get => $"{question?.Answers[1].Title}";
+            get => answerB ?? "";
             set
             {
-                if (question != null)
-                {
-                    question.Answers[1].Title = value;
-                    NotifyPropertyChanged();
-                }
+                answerB = value;
+                NotifyPropertyChanged();
             }
         }
+
         public string AnswerC
         {
-            get => $"{question?.Answers[2].Title}";
+            get => answerC ?? "";
             set
             {
-                if (question != null)
-                {
-                    question.Answers[2].Title = value;
-                    NotifyPropertyChanged();
-                }
+                answerC = value;
+                NotifyPropertyChanged();
             }
         }
 
         public string AnswerD
         {
-            get => $"{question?.Answers[3].Title}";
+            get => answerD ?? "";
             set
             {
-                if (question != null)
-                {
-                    question.Answers[3].Title = value;
-                    NotifyPropertyChanged();
-                }
+                answerD = value;
+                NotifyPropertyChanged();
             }
         }
 
@@ -185,16 +178,39 @@ namespace QuizViewer
             QuestionNumber = question.Number;
             QuestionsCount = question.Total;
             QuestionText = question.Title ?? "";
-            AnswerA = $"{question.Answers[0].Title}";
-            AnswerB = $"{question.Answers[1].Title}";
-            AnswerC = $"{question.Answers[2].Title}";
-            AnswerD = $"{question.Answers[3].Title}";
+            Random random = new();
+            List<int> items = [];
+            UpdateItems(random, items);
+            UpdateItems(random, items);
+            UpdateItems(random, items);
+            UpdateItems(random, items);
+            AnswerA = $"{question.Answers[items[0]].Title}";
+            AnswerB = $"{question.Answers[items[1]].Title}";
+            AnswerC = $"{question.Answers[items[2]].Title}";
+            AnswerD = $"{question.Answers[items[3]].Title}";
+            question.Answers[0].IsWin = items[0] == 0;
+            question.Answers[1].IsWin = items[1] == 0;
+            question.Answers[2].IsWin = items[2] == 0;
+            question.Answers[3].IsWin = items[3] == 0;
             PrevQuestionExists = question.PrevQuestion != null;
             NextQuestionExists = question.NextQuestion != null;
             AnswerAexists = !string.IsNullOrEmpty(AnswerA);
             AnswerBexists = !string.IsNullOrEmpty(AnswerB);
             AnswerCexists = !string.IsNullOrEmpty(AnswerC);
             AnswerDexists = !string.IsNullOrEmpty(AnswerD);
+        }
+
+        private static void UpdateItems(Random random, List<int> items)
+        {
+            while (true)
+            {
+                var index = random.Next(4);
+                if (!items.Contains(index))
+                {
+                    items.Add(index);
+                    break;
+                }
+            }
         }
     }
 }

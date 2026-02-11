@@ -25,7 +25,7 @@ namespace QuizViewer
             soundPlayer.MediaEnded += SoundPlayer_MediaEnded;
             timer = new DispatcherTimer
             {
-                Interval = new TimeSpan(0, 0, 4)
+                Interval = new TimeSpan(0, 0, 3)
             };
             timer.Tick += Timer_Tick;
         }
