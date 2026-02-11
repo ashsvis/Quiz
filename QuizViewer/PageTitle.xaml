@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:QuizViewer"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1080" d:DesignWidth="1920"
       Title="Начало">
     <Page.DataContext>
         <local:PageTurnamentModel/>
@@ -25,11 +25,59 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Background="#7FFFFFFF">
+                <TextBlock Text="Знатоки" Width="350" TextAlignment="Center" FontSize="50" Foreground="Aquamarine" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1" Background="#7FFFFFFF"/>
+            <Border Grid.Row="0" Grid.Column="2" Background="#7FFFFFFF">
+                <TextBlock Text="Телезрители" Width="350" TextAlignment="Center" FontSize="50" Foreground="Aquamarine" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0" Background="#7FFFFFFF">
+                <TextBlock Text="{Binding ExpertsScore}" FontSize="180" Foreground="Aquamarine" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" Background="#7FFFFFFF">
+                <TextBlock Text=":" FontSize="180" Foreground="Aquamarine" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,70">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2" Background="#7FFFFFFF">
+                <TextBlock Text="{Binding ViewersScore}" FontSize="180" Foreground="Aquamarine" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,50">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Border>
+        </Grid>
         <Border Grid.Row="0" Grid.Column="1">
             <Label Background="Transparent" Cursor="Hand" MouseDown="Label_MouseDown" BorderThickness="0,0,0,0" />
         </Border>
-        <StackPanel Grid.Row="2" Grid.Column="2"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-            <Button Width="48" Height="48" Background="Transparent" ClipToBounds="True" SnapsToDevicePixels="True" BorderThickness="0" Click="Forward_Click" >
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button Width="48" Height="48" Background="Transparent" ClipToBounds="True"
+                    SnapsToDevicePixels="True" BorderThickness="0" Click="Forward_Click" Visibility="Hidden" >
                 <StackPanel Orientation="Horizontal" >
                     <Image Source="Backgrounds/Вперёд.png" />
                 </StackPanel>

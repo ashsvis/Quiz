@@ -19,6 +19,18 @@ namespace QuizViewer
         private bool answerCexists = true;
         private bool answerDexists = true;
 
+        private bool enabled = true;
+
+        public bool Enabled
+        {
+            get => enabled; 
+            set
+            {
+                enabled = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         public int QuestionNumber 
         { 
             get => questionNumber; 
