@@ -18,24 +18,21 @@ namespace QuizViewer
             InitializeComponent();
             this.mainFrame = mainFrame;
             model = (PageTurnamentModel)DataContext;
-            if (!string.IsNullOrEmpty(soundfile)) 
-            { 
+            if (PageTurnamentModel.CurrentQuestion != null && PageTurnamentModel.CurrentQuestion.PrevQuestion == null)
+                SoundFile("meeting.mp3");
+            else if (!string.IsNullOrEmpty(soundfile)) 
                 SoundFile(soundfile);
-            }
-        }
-
-        private void Forward_Click(object sender, RoutedEventArgs e)
-        {
-            if (PageTurnamentModel.CurrentQuestion != null)
-                mainFrame.Navigate(new PageQuestion(mainFrame));
         }
 
         private void Label_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            var videofile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\Запуск волчка.mp4");
-            var soundfile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\volchok.mp3");
-            if (File.Exists(videofile) && File.Exists(soundfile))
-                mainFrame.Navigate(new PagePlayVideo(new PageQuestion(mainFrame), 7f, videofile, mainFrame, false, soundfile));
+            if (Root.Tournament.CurrentQuestion != null)
+            {
+                var videofile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\Запуск волчка.mp4");
+                var soundfile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\volchok.mp3");
+                if (File.Exists(videofile) && File.Exists(soundfile))
+                    mainFrame.Navigate(new PagePlayVideo(new PageQuestion(mainFrame), 7f, videofile, mainFrame, false, soundfile));
+            }
         }
 
         private void SoundFile(string filename)

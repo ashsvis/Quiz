@@ -77,7 +77,7 @@
         </Border>
         <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <Button Width="48" Height="48" Background="Transparent" ClipToBounds="True"
-                    SnapsToDevicePixels="True" BorderThickness="0" Click="Forward_Click" Visibility="Hidden" >
+                    SnapsToDevicePixels="True" BorderThickness="0" Visibility="Hidden" >
                 <StackPanel Orientation="Horizontal" >
                     <Image Source="Backgrounds/Вперёд.png" />
                 </StackPanel>

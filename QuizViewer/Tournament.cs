@@ -15,19 +15,29 @@ namespace QuizViewer
 
         public static bool GoPrevQuestion()
         {
-            if (Root.Tournament.CurrentQuestion == null || Root.Tournament.CurrentQuestion.PrevQuestion == null) return false;
+            if (Root.Tournament.CurrentQuestion == null || Root.Tournament.CurrentQuestion.PrevQuestion == null)
+            {
+                Root.Tournament.CurrentQuestion = null;
+                return false;
+            }
             Root.Tournament.CurrentQuestion = Root.Tournament.CurrentQuestion.PrevQuestion;
             return true;
         }
 
         public static bool GoNextQuestion()
         {
-            if (Root.Tournament.CurrentQuestion == null || Root.Tournament.CurrentQuestion.NextQuestion == null) return false;
+            if (Root.Tournament.CurrentQuestion == null || Root.Tournament.CurrentQuestion.NextQuestion == null)
+            {
+                Root.Tournament.CurrentQuestion = null;
+                return false;
+            }
             Root.Tournament.CurrentQuestion = Root.Tournament.CurrentQuestion.NextQuestion;
             return true;
         }
 
         public static bool IsNextQuestion => Root.Tournament.CurrentQuestion != null && Root.Tournament.CurrentQuestion.PrevQuestion != null;
+
+        public static bool IsFinish => Root.Tournament.CurrentQuestion == null;
 
         public static bool CheckAnswer(string choose)
         {

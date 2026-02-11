@@ -33,7 +33,10 @@ namespace QuizViewer
         private void Timer_Tick(object? sender, EventArgs e)
         {
             timer.Stop();
-            if (Tournament.GoNextQuestion())
+            Tournament.GoNextQuestion();
+            if (Tournament.IsFinish)
+                mainFrame.Navigate(new PageTitle(mainFrame, "ending.mp3"));
+            else
                 mainFrame.Navigate(new PageTitle(mainFrame, Root.Tournament.IsWinQuestion ? "chgk2_yes1.mp3" : "chgk2_no1.mp3"));
         }
 
@@ -55,10 +58,14 @@ namespace QuizViewer
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             model.Assign(Root.Tournament.CurrentQuestion);
-            if (Tournament.IsNextQuestion)
+            SoundFile("gong-1.mp3");
+            actions.Enqueue(new Action(() =>
             {
-                SoundFile("nextquestion.mp3");
-            }
+                if (Tournament.IsNextQuestion)
+                {
+                    SoundFile("nextquestion.mp3");
+                }
+            }));
         }
 
         private void SoundFile(string filename)
