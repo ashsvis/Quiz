@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <MediaElement Source="" LoadedBehavior="Manual" Name="mePlayer" />
+        <MediaElement Source="" LoadedBehavior="Manual" Name="videoPlayer" />
+        <MediaElement Source="" LoadedBehavior="Manual" Name="soundPlayer" />
     </Grid>
 </Page>

@@ -14,12 +14,16 @@
     <None Remove="Backgrounds\Вперёд.png" />
     <None Remove="Backgrounds\Запуск волчка.mp4" />
     <None Remove="Backgrounds\Назад.png" />
+    <None Remove="Media\volchok.mp3" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Backgrounds\realistic-blue-paper-cut-background.jpg" />
     <Resource Include="Backgrounds\Волчек ЧГК.jpg" />
     <Resource Include="Backgrounds\Вперёд.png" />
+    <Content Include="Media\volchok.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Media\Запуск волчка.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

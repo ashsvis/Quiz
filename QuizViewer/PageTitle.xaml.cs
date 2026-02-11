@@ -72,9 +72,10 @@ namespace QuizViewer
         private void Label_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             // mePlayer.Stop();
-            var file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\Запуск волчка.mp4");
-            if (File.Exists(file))
-                mainFrame.Navigate(new PagePlayVideo(this, 7f, file, mainFrame, false));
+            var videofile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\Запуск волчка.mp4");
+            var soundfile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Media\volchok.mp3");
+            if (File.Exists(videofile) && File.Exists(soundfile))
+                mainFrame.Navigate(new PagePlayVideo(this, 7f, videofile, mainFrame, false, soundfile));
         }
     }
 }
