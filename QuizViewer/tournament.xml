@@ -2,28 +2,156 @@
 <Tournament Title="Турнир">
   <Tour Title="1 тур">	  
 	  <Question>
-		  <Title>Вопрос 1</Title>
+		  <Title>Косметическое средство, которым можно «затуманить» мозги мужчинам</Title>
 		  <Image></Image>
-		  <Answer IsWin="True">1</Answer>
-		  <Answer>2</Answer>
-		  <Answer>3</Answer>
-		  <Answer>4</Answer>
+		  <Answer IsWin="True">Пудра</Answer>
+		  <Answer>Тушь для ресниц</Answer>
+		  <Answer>Хайлайтер</Answer>
+		  <Answer>Духи или парфюм</Answer>
 	  </Question>
 	  <Question>
-		  <Title>Вопрос 2</Title>
+		  <Title>Приходит, уходит и иногда как нагрянет!</Title>
 		  <Image></Image>
-		  <Answer>5</Answer>
-		  <Answer IsWin="True">6</Answer>
-		  <Answer>7</Answer>
-		  <Answer>8</Answer>
+		  <Answer IsWin="True">Любовь</Answer>
+		  <Answer>Весна</Answer>
+		  <Answer>Успех</Answer>
+		  <Answer>Настроение</Answer>
 	  </Question>
 	  <Question>
-		  <Title>Вопрос 3</Title>
+		  <Title>Если она с возу, то кому легче?</Title>
 		  <Image></Image>
-		  <Answer>9</Answer>
-		  <Answer>10</Answer>
-		  <Answer>11</Answer>
-		  <Answer IsWin="True">12</Answer>
+		  <Answer IsWin="True">Бабе</Answer>
+		  <Answer>Телеге</Answer>
+		  <Answer>Мужику</Answer>
+		  <Answer>Коню</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Часть женской одежды, за которую можно спрятаться</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Юбка</Answer>
+		  <Answer>Шаль</Answer>
+		  <Answer>Фата</Answer>
+		  <Answer>Перчатки</Answer>
+	  </Question>
+	  <Question>
+		  <Title>И часть одежды и самое лучшее народное радио</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Сарафан</Answer>
+		  <Answer>Юбка</Answer>
+		  <Answer>Платье</Answer>
+		  <Answer>Халат</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Часто говорят, что она спасёт мир</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Красота</Answer>
+		  <Answer>Деньги</Answer>
+		  <Answer>Технологии</Answer>
+		  <Answer>Закон</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Что делают жёны с мужьями, когда мужчины приходят домой под шафе?</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Пилят</Answer>
+		  <Answer>Укладывают спать</Answer>
+		  <Answer>Сохраняют молчание</Answer>
+		  <Answer>Проявляют заботу</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Находится в воде и «худеет»</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Мыло</Answer>
+		  <Answer>Снеговик</Answer>
+		  <Answer>Кусочек сахара</Answer>
+		  <Answer>Бумажное полотенце</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Месяц, в котором любая женщина меньше всего разговаривает</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Февраль</Answer>
+		  <Answer>Январь</Answer>
+		  <Answer>Сентябрь</Answer>
+		  <Answer>Апрель</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Женский предмет при помощи которого можно вмиг поправить причёску, напудрить носик и сделать макияж</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Зеркало</Answer>
+		  <Answer>Косметичка</Answer>
+		  <Answer>Пудреница</Answer>
+		  <Answer>Портсигар для помады</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Что женщины бьют в гневе</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Посуду</Answer>
+		  <Answer>Родных</Answer>
+		  <Answer>Мебель</Answer>
+		  <Answer>Бытовую технику</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Каждая женщина хотя бы раз в жизни, но садилась на это</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Диета</Answer>
+		  <Answer>Велосипед</Answer>
+		  <Answer>Стул</Answer>
+		  <Answer>Лошадь</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Что объединяет погоду и моду?</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Изменчивость</Answer>
+		  <Answer>Сезонная одежда</Answer>
+		  <Answer>Внешний вид</Answer>
+		  <Answer>Человеческий фактор</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Даже те, кто никогда не летал на самолётах знают эту стюардессу</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Жанна</Answer>
+		  <Answer>Эллен Черч</Answer>
+		  <Answer>Вера</Answer>
+		  <Answer>Людочка</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Чего не найти в женской сумочке?</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Порядок</Answer>
+		  <Answer>Билеты на футбол</Answer>
+		  <Answer>Ключи</Answer>
+		  <Answer>Зеркальце</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Что теплее шубы?</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Две шубы</Answer>
+		  <Answer>Дублёнка</Answer>
+		  <Answer>Пуховик</Answer>
+		  <Answer>Меховые сапоги</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Что у женщины на теле, у стратега в голове, применяется в хоккее или в шахматной игре?</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Комбинация</Answer>
+		  <Answer>План действий</Answer>
+		  <Answer>Расчёт</Answer>
+		  <Answer>Стратегия</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Человек здоров, не инвалид, не умер, но его вынесли из больницы на руках. Кто он?</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Новорождённый ребёнок</Answer>
+		  <Answer>Пожилой человек</Answer>
+		  <Answer>Человек в коме</Answer>
+		  <Answer>Знаменитость</Answer>
+	  </Question>
+	  <Question>
+		  <Title>Что досталось современной моде от Анны Карениной?</Title>
+		  <Image></Image>
+		  <Answer IsWin="True">Туфли на платформе</Answer>
+		  <Answer>Жемчужные украшения</Answer>
+		  <Answer>Ретро-стиль</Answer>
+		  <Answer>Меховые аксессуары</Answer>
 	  </Question>
   </Tour>
 </Tournament>
