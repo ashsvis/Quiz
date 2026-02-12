@@ -1,4 +1,6 @@
-﻿using System.Xml.Linq;
+﻿using System.IO;
+using System.Windows.Media.Imaging;
+using System.Xml.Linq;
 
 namespace QuizViewer
 {
@@ -7,6 +9,17 @@ namespace QuizViewer
         private static Tournament tournament = new();
 
         public static Tournament Tournament => tournament;
+
+        public static BitmapSource BitmapSourceFromBase64(string value)
+        {
+            ArgumentNullException.ThrowIfNull(value);
+
+            using var stream = new MemoryStream(Convert.FromBase64String(value));
+            var decoder = new PngBitmapDecoder(stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.OnLoad);
+            BitmapSource result = decoder.Frames[0];
+            result.Freeze();
+            return result;
+        }
 
         public static void Init()
         {
@@ -36,6 +49,12 @@ namespace QuizViewer
                         nquest++;
                         tour.FirstQuestion ??= quest;
                         tournament.CurrentQuestion ??= quest;
+
+                        string? answerImageSource = xQuestion.Element("AnswerImage")?.Value;
+                        if (!string.IsNullOrEmpty(answerImageSource))
+                        {
+                            question.AnswerImageSource = BitmapSourceFromBase64(answerImageSource);
+                        }
                         var nanswer = 0;
                         foreach (XElement xAnswer in xQuestion.Elements("Answer"))
                         {

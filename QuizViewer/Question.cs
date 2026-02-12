@@ -5,7 +5,7 @@
         public int Number;
         public int Total;
         public string? Title;
-        public object? Image;
+        public object? AnswerImageSource;
         public Answer[] Answers = [new Answer(), new Answer(), new Answer(), new Answer()];
         public int AnswerIndex;
         public Question? PrevQuestion;

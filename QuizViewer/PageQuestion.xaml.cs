@@ -92,6 +92,8 @@ namespace QuizViewer
             SoundFile("chgk2_otvet.mp3");
             actions.Enqueue(new Action(() =>
             {
+                if (Root.Tournament.CurrentQuestion != null && Root.Tournament.CurrentQuestion.AnswerImageSource != null)
+                    model.QuestionImage = Root.Tournament.CurrentQuestion.AnswerImageSource;
                 btnAnswer.Background = Tournament.CheckAnswer(choose) ? Brushes.Lime : Brushes.Red;
                 timer.Start();
             }));

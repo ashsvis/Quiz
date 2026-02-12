@@ -3,7 +3,7 @@
   <Tour Title="1 тур">	  
 	  <Question>
 		  <Title>Косметическое средство, которым можно «затуманить» мозги мужчинам</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[iVBORw0KGgoAAAANSUhEUgAAAwkAAAH+CAYAAADXk0IEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACeTSURBVHhe7dqLchy7bihQ/f9P33tQdZiACPjoGUmW7LWqWG7iwZ4tKx4iycf/AwAASAwJAADAxJAAAABMDAkAAMDEkAAAAEwMCT/Ex8fHtP4Wf+t/FwDA3+x4a6uXPBe9WffzifXE0/rf4m/97wIA+NtdDQmZi9/s3Z+HAQEAgJ/meJM7DQmxz7H6vKq/ydV82OVX9cO7+c5NPq+q5mvN2J/yWVeTV6fW5Lr8PHSxLJ8zVtXFwqq2rpNd/djv8nUNq/hwit30xD6vrOZO+azuh1V86PJPe2K/iq1ynRzPvXllu1w45aocy71jZafc+LPLh5yr+a4+rOLwrvy7mFe2y4VVvsZzLjzJdfkqx3LfWNmTfc2FUz6s4kPku5XtcmHEVjU53uVDFws1ns9Y9VS7nm6/it3kxspOufHnLp/lWJcP3Tl5ZXUfciz3jZXV/bCKh3Xmv56+pP6ZnWK3PdmT/qf52Hc92Slfde+ociyedz1dbpcPN7HdGbHvzsi6fHdO553e4XRGPO/O7PpXducMu7Njv8uHz4rFc63pYtW7PV3tKRbPtabGaj68k7/Z11h4JdadVfPVTX/XB5+h+93KsXfzoavpPDm3e8e7/dmptuZPNZ0un2OnfIh9Fxtuz+g8Pac69bxy/pOem3yt2fXX+roPXU31JD90sfA0HtaZ/3jl5fXP7BS77cme9D/Jj+euJzvlq1rf9efYk/x4ftI/1NjqjPHcnZF1+RqLfV5DrQs11tVkpzNeya/U2idnj+dVfqerO8XG8+rPld0ZK11PdoqN59WfIT8PT/JVzXVn3Z55in1WfvUnfLbudyvHXslXNzXh1feO51f7w27fPe9iXU2ny+fYKR8+64y8htXz0MVOPvP8U89n5sfzLraryZ7khy4WIp7XsKoP68x/dI3bw/774lXN6bzcP1a1q+lysYYuF2sYz11s5SZfV1b3Icdu86ueeO5WVWN5P5672EqXr7HV/pXe6nTGK/khcnVlXT7WMJ67WMjPO13dKXbz3Bn5pz1jdbp4jj19Hp7kQ+zHqkYs53Z12Sn2mflTH3yGJ7+Tw9PfzVVNxOsadrkw9jlen+vKnuzHcxcLN8+dLl/7u5XVfcix3DdWVWNjn+Ojt64bq54ulq3iQ5fPsXF2XUN+Hrr8quf2uVtDl4tVdbFQ42O/qg/rzH+88vLdS0+xn5CvNV1Ptst3uZvzc+wmX2tO/Z3TGbt8p8ufzhj7V3qr0xmv5MOpL9ycvevp+jtd3Sl289yJfK256Rm62lPs6fPwJF/VXOy7WPVK7DPzpz74DE9+J4env5unM4bTuTVfa572Z6ezTvlh9dzp8k/6wytn1NhqfzrnFaszu/NP7zz1fEZ/ran54ea50+VvY6HGx35VH5aZ25eEHFs9hye9w0/Kd3b5m/NONV+dH2rslTOyp+8IY/9Kb3U645V8OPWFV85+kh9eiXX5sIoPt+/Kav60Dzm2Ov9U807+tA+fFfuKfKjxVR089crv5JN8uKkJT8797Pxu//SsYRUfXjm3xr7ijLF/ek516qn50z7s+sOfzod3z7iNhRof+1V9aDPRcFpDfg43+7yymqv5sKvJz8Nn5js3+bqqXb7munzV1eSVdbGQY6f8yjh7rGqVr895P3SxavR2Z9Rcl1+pfbW27kOOnfIh9nl1dvFV765np8t/Rk/s88rqfsjxrqY7J6/qlKtuY2GcO1ZWczUfdvmuPtzWwVPd71L3+5ZXdZPv1L5ct8uFug85lvvGyrp8XUN+Hk75sIoPp3ND7POqar7WnPJhla+1q7qdXU93RleTV1b3oavJK6u5Ll/lWJcP3Tl5ZXUfbmNhnDnWsKoPbWbXEE55Po+f9dfwc+VP+67fQb/rQPBvwev+1Z9d+199+mH4Rfs+ftZfw8+VP+07fgf9ngODfw9e96/+7PzG/HD+h/pr+Lnyp/kdBL6Tf3NeZ0gAAAD4D0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAkz8yJHx8fEwLAAD4Ob79hm4oAACAn+1bb+wGBAAA+PmWt/b8/w401o1dT83VfDjV7HJhl6+5nM/PQxc7yWfnle1ynV19159juW+sIT8PXazKZ63OeJKvNbscAPDv2d0Nau6Uz8Z+lQ85924+y/FVvsqxrn4V63Iny+ruoNPhp56bM0/76un54SYW+67u5HT2KV991nk3sdh3dVWu6c6oTjVdT3bKAwB/r5u7RXglFs+1puard/Lv9IZVvqvt3NaFZeXpg3VOPTdnnvbV6fxOV9edc3tednt2tnvPzWc4nR9O7x3Pq/6s6xu6/lNN15Od8gDA3+v2HtDVnWJfna+e9u7qT2d1buvCsjIOqeukq8mxUz7c7Osa8vNOVzdir5yX7c4Op3x18xlO54fde2/6s1197LuV3ezrAgD+Tbf3gK4u3yXyGvLzUPPdGvLzUGNdX8jxLh9yrOZ3fUOuOdVWy8rukNPBp56bM3f7U3+X76zOqfHb87LV2cMpX918htP5YfXeGl/1D6f6U3/Y9XT9N2cCAH+n23vAK3eIU8+7/dXp7Brb1T89K3SxlWXlKwefem7O3O1P/af88Gqsq6lO59y8J7utj9hnnbNT86d9eNLzSj8A8Pe6uRuEV2LfnX/SO0Tspva0Dzc1wzITTXXdOPWs8nU/1Nioyyvb5YYufhNbnZfdnpPXyU39Lhe63G1sGO/oVrbK1f1QY6Mur6zuAYC/2+5eMOziq96aq/nwmfksx7v8sMrdxEZvXlndZ+sM/8fuB/mnfcdnW73ju38uP/nvAQD4PX7DneIrP+PubLetSz/9l+g7Pt/qHd/5s/npfw8AwO/xG+4VX/UZT+e6cf0FXJwBAJ776XeoP/n53C4BAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEvinfHz87698fgYA4H+5JfHPieHAgAAAsOamBAAATLZDwvjfuK7+N6+7/Kp+eDcfYl9XdspXq3yOdzU1Fvuxqi4WcrzW1LO6M7rYyTg3r5Na0/WN2E3ulM/GfpUPOVfzq3oA4M85fV/HPq9s7Ff5Tldz25dX9TSfa/LzUGO575TL+fycreLDMts1nl74Tj727/SHJ/lO5GtNjXVn7PKn/bA6o6u/jZ28ck7O3/Z/Viyea03NV7t87LseAOD7dN/PQ/c9XfO7/k5X/7Qn5NgpH3b7LrfLh3diYRUfltlj4+FDPMmP51f7hyf5zsiv/hzyvuaqrjev4eY5u6k56fpOZ53e+5Wxz8yP564HAPheq+/l7ns6x075Ttf/pKfT5Wtst++eV/mdri5ieQ1dbbbMHhub/OnFXX7VE8/dyt7NVzm/eg67XIjYWFWNjX2Oj95am9X6V+T3jHVyqu3inxX7rPypBwD4fqfv8eH0PX76bh/50znZK/ka2+3HcxcLtXelq6uxsT+ducweGy8/RF1D3Year06xV/LZqrb2vXpmWO1XZ9b64abmpOs7nXV671fGPiNfa7oeAOB7je/jm+/pHDvlO5GvNTc9O13+9I68j+dT/kZXtzr3dOYye3rJKd950n9z/rv7apXv4hFbxbPbfY6feoaI73InXc2pr+ZP+/BZsa/OAwDfr34XP/nuPuU7X9Fzc+Zuf+o/5Yeb2Nh3tdk2G815Vad8lWu6+u/Md1b51Vm7+lU+53J+9TysYl08rOLZ6M/rpKupsXxeVx928VVvzdV82OVX9QDAn3P6vo59XlnN1Xynq7nty6ta5et+qDVVjY1zxup08VVfV5vtsyydfrDfYfcZfsLn+2x/438TAPA6d4Ov4yf7op88JPyt/wPjHwIAIHM3+Dp+si/4yQPC38w/BABA5m7wdfxkAQCAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgsh4SPj492DeO5yw05V/M1l/P5eaj5uqp38jV3ylc1X2t2+fw8dLEqn1Xrx/6Uz3Is9421c6odsVXNrifkvrFGvOpiAHy//G/1WFXOPc3X3FjZLhdqvtY8yeX8Kj7UfK055Z6oZ42V7XKdUbPryblTPlvVZl1N6OryurHrqblTPhv7VT7kXM2v6rOuJqzi1bLq9PJ4rjU1X70ai32OnXrezQ+vxG56dvsuV2Odp2fs6sMpv3Nzdo3f9AxdPpz6APhz4t/j+m/y6d/onO9qPzMfTvvqdP7Kqe/d/M677+tEvtbc9Ay73u6cXX329JzqtueVWDzXmpqvnuRDVxNW8WpZdXr5u/nh9pwulr2b75zOGU5n19hu3z3X+s7qjND172pu+nd2Z4Wb2O6Mrn/Y9QHw53T/Jp/+nX7yb/rp/FM+nPbV6fyVU9+TcyOf10lXk2OnfOezeoacuzk79nkNq+ehi2Wn/HB7do59dT7EPq+h1q0sq7oDTi94kh92sdV58VxXVvchx7p853TOUGOxryvb7cdzF9vZ1Xf9u5qb/p3dWeEmtjuj6x92fQD8Od2/yd2/73UN+bnT5U/9NXazr2vIz1XtqbW7fH7u1PzT+nB637tnhtjXld3E88pW+xwffXXtnPJDV3eKfUa+W9lqX+Mry6rugBx7Nz+sYjWe96dzXsl3TucMT9+328fzqb461Xf9u5qb/pWb3ptY3t+cOez6APhzun+TT/9mP/k3/d3zw25/6u/y4dQ3rM5anTvU/NP6cHrfd5/5tHe1P51zctvT1Z1iX50Pq33X21lWnV7+bn54JfbV+eHV2Dv7mgtdLHty/rCK3dau1Nrb81ax29ps1RdOvQB8jdO/5386H3b7U3+XD6e+sNuf+k9nVU/PC199Zs0/6Q2r/dNzqtueV2JfnQ+rfdfbWVadXh7PdVWnfFj1VTk2zsurejcfdvFVb9czYl19yLFTvhpndmvY5bJVblVfjf5uZaf8sMqt6ofTmQB8v/Fvc17VqeaUq7qavIa6H2ps1OU15Oeq9uTa/DzUWO57kut0NTWWz+vqq1rf9ZxqdvFq15tzt3U7Nz27+Kq35mo+7PKr+iz35lytW7mraty+gK+1+nt46Zfhzb/Tm88Svvrz7PpePROA9/j39+/l7/a53/Aze/kT+oX4GVZ/Dzl++3f17t/pzWcJX/15bj8HAN/Hv8F/L3+3z/2Gn9nLn9AvxO9x83f1nX+fX/l5/F4C/Ez+ff57+bt97jf8zPytAgAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMST8IB8fH9MCAIA/wU30h/ipQ8F3DC67s7/yvQAA9Ny+foCfegnuPtdXfNbdILDLAQDwNba3r3FB6y5qNTfy+c8cz3Ku5rv6cFPX1eSV1VzOr+I7p55dvuZqPuzyY7/Kh5zr8tVtTV2vGH21fxfPKxv7U35Y1eQFAEP3vXD6rsjfKav+23yVc0/zNVfz4Wm+q8lu6nf5msv5/Dzs8rU/jFiXCzVfa3a5UPNjDfl5qLGuJqx683piWb160bB6UfchTn013/V3sSrHXsmHU1/nlXd9dr7WdD3Zu/nQ1dz0VaOn9q7iVc7H8+qcsHreua0D4O/Xfcfsvie6XI49ze/23VnVqf50xmf2D0/OrPlTbpWvteEmttu/0h8+44xwU7fq7SwrTwevXvJKX5df/TnUfcixV/Lh1Nd5JZ9jX53vvJsPr7y3k3vGcxdbOdWu8qdzh9s6AP5+3ffI7nvi9B3S5Z+cl/end4VT/emMz+wfnpxZ86vceD7ls5vYbv9Kf3jljLyGrq7qYivLytPBq5e80rfK7/pi360hPw+nfDj1dV7J59hX50Ps69o55UM976ank/vGcxcbYl/XkJ+Hmq89Va451QLwbxnfCfm7Yfc9cfoO6fI1Fvuxqhxb5esadrnhVHPKV6f6Lh9ryM+hy63q43msThevsd0+nruV1X3IsdyXV7bad/Fu3VpWdofk2Oolr/St8ru+J+cMp3w49XVeyefYn853Tvnwyrmd2rPbn975JH+qHboYAP+m+E6o3wu774nTd0iXvz2v1p32YdcfnuSHU0/22f2195Qfal24ie32XX91escpH1b7U91Ty+7u4BxbvfiVvlfOfeWcUz6c+jqvvOsn5Vc+49xX3rPbd+e9kz/tQxcD4N/09HviVP80f5sLdR92/eFJPpz21enMp/nP6g2n/rDbv9If3j1j7E91oYutbCvjoLyy1UtqT1e3y3f14aauq8krq/ts17dy6vnKfM3VfLip6ex6aq7mQxerTjU1P96V17DLhboPXU1dABC674TT90T+Pln13+aHHKsr2+V3uWFXk5+HLpblc8aqunx+znLs3XyIfV5D3Q81Nupu60OO3fTEPq+h1oVV7Y1n1ReefgDe52f+v/wsAPgXrL7vfA/yWT79N8kv5/fzM/9ffhYA/AsMCXy1T/9N8sv5/fzM/5efBQDA+9yoAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAya8YEj4+zDIAAHyvJ3fQv+2+akgAAICGIeGHMyQAAPDdDAkL8R+bV9b9IHIs94015OehxnJfXdUuv6rPXq0Jq968AAD4GU73tJrPq+pqxqp2+W6fY2Of15Cfs1X81qPu0wd6NRb7HOvy2a42PMmHV2vCK2cBAPD9Tve0073us2rDKt/VDqdzst05Nx51n/4DXomN5y427PY1F57kw21NXkNXV3UxAAD+vCf3us+qDat8Vzuszslr6Gqf2HbXl+aXdblY1S6Wc6vnsNvXXKj5bmVdPla22nfxbgEA8DOs7mn1zrbbP63t1tDFOl2+xsb+dNbJsvv0IU75YRWr8bzf5cKuNjzJh1dqxv7mLAAAfqZ8dzvd6z6rtrqt7XI1Nva7c24su08f4pQfXonV/G7/9KywO2841Yz9K2cBAPD9Tve0073us2rDk7OG0zlh7G/PXNlWx2F1Dfl5+MxY7Fer2uVX9dltTV5DrQurWgAA/qzTPa3m86q6mrGqXX5VX61ieQ21tu5PnlX/IU//owAA4F1P7qA//b5qSAAAgE/wtwwJr3w2QwIAADT+liHhFW7fAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAATAwJAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAATAwJAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAATAwJAADAxJAAAABMDAkAAMDEkAAAAEyWQ8LHx5yK/Sp2kzvls7Ff5UMXCzWez1j1AADAzulO+TSfa7r9sMsNNdbVhFW8s6x8+mHCZ8Xiudac9kM9p1r1AQDAyu6OeXPnfNJT/8xuYl1NWMU7y8p8yM2HCZ8Vu+mJfV7D6nnoYgAAsLO7Y97cOZ/01D+zm1js8xpq3c6ysjs46+KfFbvpWe3rOd0CAIAn8h2y3ie7++WppusJER+rk/N5Zat9je8sK/Mh3YFfGbvpWe1P5wAAwBO399DsnZ76Z3YTW+273pVl5e3Lss+K3fSs9k/PAQCAndW9c7i5cz7Zr55D3YdTzdh3vSvLytsPkFdnF1/11lzNh1W+1q7qAADgpN4l88pWubofak2225/OCrHPa6h1O/eV3+jJfwAAAHyV1b30b7+vGhIAAGDBkPCDGBIAAODPcRsHAAAmhgQAAGBiSAAAACaGBAAAYGJIAAAAJoYEAABgYkgAAAAmhgQAAGBiSAAAACaGBAAAYGJIAAAAJoYEAABgYkgAAAAmhgQAAGBiSAAAACaGBAAAYGJIAAAAJoYEAABgYkgAAAAmhgQAAGByHBI+Pj6mBQAA/N22t35DAQAA/HuWU4ABAQAA/k3bIaGuqouFGs9njJXVfehiAAD8Hvnul1e2y610dTWWz1zVr/I1d8pXNZ9r8nM47cM4Y6ysqw853tWs+oZl9uaw1eGnupt9jQEA8Lt097kcO+VXXul75b2vxJ7mn+5DPa/rqTVVF8uW2ZvDYp/X0NVlu/14rjUAAPwu3X2uu/dlNV/XiFddLMv5U+1w+57T2bv8033ozlv9OXQ9O8uKrnn3sjD2t3VD11drAAD4Xbr73Om+d3MHjJpuZbt8ft7p6m5isa9ryM/hZt+t4eY57HKdZUXXvHtZGPvbuiH2pxoAAH6X7j6XY6f8yrvn3rwjnM4Znryv1j7dV6uzd+eczgzLiq5597Iw9rd1Q92HLgYAwO9xuuO9egd899xTfng1tts/qQ11H3bnDau+VX21rRoHrQ5c5cdzjQ81dlMDAMDvcnsPzOtGV1dj+cyxsl1u2MVXvV1PjuW+3cpOuU4X7/pX7qoAAIBvcXuRf+rJuYYEAAD4QQwJAADAl3s6eBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAAC+ycfHx7R+KkMCAAB8g588FFSGBAAA+GK/aUAIy0/b/YfUWOzHyk69XT5059SV7fKnHAAA3Kr3yrGG/DzUfF3VriY/D7v80/5qmXn6ol0u1HzX38WyvK+58E4MAABWTnfKd/Nht+9yq3ytDbexYZnpXrQ9qOS6/qGeV/8cdvuaC09ieQEAwM7qTpnl/S43nGpW543nU766qRmW2dG4Oyz2Y1WnvuG2LnT7uqqbWFcDAADD0zvlzX3zVNOd18VCPI+1surtLLPdS25fGvL+NrerC3Ufdv3hJtbVAADA8PROeXPfPNXU8075odYNNzXDMts17g5e1Z/OyU5nPt2Hm1hXAwAAw5N75pPabLc/9Z/OGiK+ymXLiq65e/nuRavcrn78eeo75YdVLC8AANhZ3Smr3f1y5GpN3Q+1pnqSHyLWxatzxRtuPgAAAPwtfvr99/bzGRIAAOCTGBIODAgAAPxL/pYBIbjJAwAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAAJPlkPDx8fF/VvYkl/OrOAAA/Gn1rlrvq2O/yoecq/muPnR1eWV1H3LslL9xrL59yemDhduzAADgT7i559aamq9u+mtN9U4+9l3PzrH69CGGHFt9iNuzAADgT3jlnvtKfvVnyM/Dq/nx3PXsHKtPH2LoPkx1exYAAPwJcTetK6v7kGO5L6/h9rlbQ5eLNYznLnbrWN0deIqtPsTtWQAA8Ce8cs895bNV7atnDLW/1pzOrI7Vpw8x5NjqQ9yeBQAAf8Ir99x38+HdM57kQ1eT7bP/sTog4nllq56w6wMAgD+p3lXrffWUD7t8Vx+6uryyug85dsqHribbZwEAgP9xulz/LQwJAABwyZAAAABMDAkAAMA/yZAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAATAwJAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAATAwJAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAATAwJAADAxJAAAABMlkPCx0efWsUBAIC/gyEBAACYvD0kxD6v6t08AAB8pXofHSvb5ULN15onuZxfxUPN5Xx+fsWye3Xw6YU1v/uw3Vmn8wEA4DOd7qQ3d9bTvjqdv9LV3saeWHbHwau1U/N5v8sNp/MBAOAzne6kN3fW0746nb/S1a5ieT217FgdVuP55WNleb/LDV0MAAC+yulOenNnvdnXNeTnqvZ0tTexrmZnWb06KMdPH6jmT/vQxQAA4Kuc7qQ3d9bd/tTf5cOpb7iJrd6xsqxeHZTjpw9U86d96GIAAPBVTnfSmzvrbn/q7/Lh1DfcxE77apldNXYvqGsVHyvb5QAA4Kt1d9Aay/fVnKv7ocZGXV5Dfq5qT1e7ij3tyfbZN6xefPpAAADA1zIkAAAA/+PmPu7GDgAATAwJAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAATAwJAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAATAwJAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAATAwJAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwGQ7JHx8fEwrq7lTHgAAfqp6dx0rO+Wybp9XdZOvaiz3j5XtctUy2zV+dgwAAH6C0/31af5Jb3ilfndGyPuaC11sWGcat4c//RAAAPAnne6vN/fbsV/Fs13NqX48784IXU/WxYZ15r+iOa/qnRgAAPwEp/vrO3fem1je7+p3dbt9zYUuNqwzjdvDn34IAAD4k07315v77div4lmO3daf6nb7mgtdbFhmbg96JwYAAD/B6f76NP9ZvcNNbLe/PXNYZ/4jGvPq7OKnXgAA+Am6+2qN5bttl8u6fV5DjeeV1X0Ysa4+dGfktbPPAgAAX2Z1WT9d4r+aIQEAAP4QQwIAAPArGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmBgSAACAiSEBAACYGBIAAICJIQEAAJgYEgAAgIkhAQAAmCyHhI+P/5uqsdjnBQAAf6PdvbfmTvmq5nNNfq5qrvaGEetyO8vK7pAcO+UBAOBvcHvvfTW223f9w6nuNtZZVp0OfeelAADwW1xfrC/vxzW228dzXlmtq25jnWVVHNCtocvFAgCAv8ntHberu4nt9qfcWJ0uvqqtllWnQ29fAAAAv9n1xfpwfx5qbLe/zdW6cBvrLKtOh77zUgAA+C1u772vxnb7V3Oh7kMX6yyrbg6NfV4AAPA3urn37uJdb90PXU1XW/ehq8nr1n0lAADwTzAkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMFkOCR8f/zdVY7HPCwAAfrvVnTcbsVWuyrFTfohYXtnY7/J1PbGs7g46Hf705QAA8NPkO+3tnfhJz82ZN2c87Xli2fXKS179EAAA8FPkO+3tnfhJz82Zn3FG6GI3ll1xYLeyUx4AAH6b0922i+dY7s9ryM9DjeW+vIb8PNzGbiy7Ti/5zA8BAAA/xSt33ic9N2d2NdnNGeF0zsqy6/SSz/wQAADwU9Q77WkfcuzdfPiMM0IXC6v4sMzevCT2dQEAwG/W3WlrLN9/u1yVY7mvruxJruaHp/FhnwUAAL7F6eKePantGBIAAOAX+K4h4abXkAAAAL/Mu/+XhBNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADDZDgkfHx/Tyrr9KtblQs3nmvxc1VztDSPW5QAA4G/R3XVrLN+Lu/pqWdE159jqebiJ7fZd/3Cqu40BAMBv98rd95j/75//x5ODbz9Yje328ZxXVuuq2xgAAPx2r9x9j/n//vl/3Bw8VqeL19huf8qN1eniq1oAAPjN8t04r+yUr5bZY2PKd7U3sd3+Nlfrwm0MAAB+u9Pd95W78TL79GWnfXjS82ou1H3oYgAA8Nud7r6v3I232WjOK+sO7mryGup+6Gq62roPXU1eAADwN+ruujWW78Vj7bg9AwAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADAxJAAAABNDAgAAMDEkAAAAE0MCAAAwMSQAAAATQwIAADDZDgkfHx//s/h3+HsHgL+D7/R/02f8vR+HBP5d/v4B4HfzXf5vMyTwJfz9A8Dv5rv83/btQ0LE86pqvtY8ydV8OOWrWj/WMJ673JBzNV9zYw35edjlT/sQsbyyVX2We7v6sIoDAL/D7js+r6rma82TXM2HUz6rtWMN47nLDTlX8zU31pCfh13+tA8Ry6u6ieX+rj6s4je2nd3BN7Hd/tT/br5zc2atqfnqK/NP92F3XniSH7oYAPB7vPqdv9uf+t/NVzfn1Zqar74y/3QfntbcnBG62K1t56svqzV5fzrz3Xzn3TPfzYdd/bv7kGPv5ocuBgD8Hq9+v9eavD+d+W6+eve8d/NhV//uPjytuTkjdLFb285XX1Zr8v50ZjzXldV96GLZqeer82FX/8q+W0OXizXk5+E2BgD8Hq9+v9eavD+dGc91ZXUfuthwqv/qfNjVv7LvVtblYw35ebiN3dp2vvqyWpP3pzPfzXfePfPdfNjVv7uvunyOnfLD6T0AwM/26vd7rcn705nv5qt3z3s3H3b17+47XU2OnfLDzbtWtp2vfoDd/tT/br7z7pnv5oeI3dQ+3Yccezc/dDEA4Pd49Tt/tz/1v5uv3j3v3fwQsZvap/vwtObmjHAb62yrVodEPK+h7ocaG3Vdfc3VfDjlq9UZQz5rrGqXX9VXXW8Y8dPKTrmqq8mrs4oDAL/D7js+r6HuhxobdV19zdV8OOWzVf+Qzxmr2uVX9VXXG0b8tLJdLtzEcn9XH7r4qrbaVt0e8tt913/nO+/5E38X/8rfPwD8rf6F73L3uLW3PvN//2zFwWP9zb7rv++tv6hv/DsYf+ff+U4A4PP9C9/p3/Xf9s57vvvnP/7O3/rM//3zn/Ydf3Hf/csBAPAvcI/7Gm6uAADAxJAAAABMDAkAAMDEkAAAAEwMCQAAwMSQAAAAJP/v//1/hkniMpQLHaYAAAAASUVORK5CYII=]]></AnswerImage>
 		  <Answer IsWin="True">Пудра</Answer>
 		  <Answer>Тушь для ресниц</Answer>
 		  <Answer>Хайлайтер</Answer>
@@ -11,7 +11,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Приходит, уходит и иногда как нагрянет!</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Любовь</Answer>
 		  <Answer>Весна</Answer>
 		  <Answer>Успех</Answer>
@@ -19,7 +19,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Если она с возу, то кому легче?</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Бабе</Answer>
 		  <Answer>Телеге</Answer>
 		  <Answer>Мужику</Answer>
@@ -27,7 +27,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Часть женской одежды, за которую можно спрятаться</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Юбка</Answer>
 		  <Answer>Шаль</Answer>
 		  <Answer>Фата</Answer>
@@ -35,7 +35,7 @@
 	  </Question>
 	  <Question>
 		  <Title>И часть одежды и самое лучшее народное радио</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Сарафан</Answer>
 		  <Answer>Юбка</Answer>
 		  <Answer>Платье</Answer>
@@ -43,7 +43,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Часто говорят, что она спасёт мир</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Красота</Answer>
 		  <Answer>Деньги</Answer>
 		  <Answer>Технологии</Answer>
@@ -51,7 +51,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Что делают жёны с мужьями, когда мужчины приходят домой под шафе?</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Пилят</Answer>
 		  <Answer>Укладывают спать</Answer>
 		  <Answer>Сохраняют молчание</Answer>
@@ -59,7 +59,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Находится в воде и «худеет»</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Мыло</Answer>
 		  <Answer>Снеговик</Answer>
 		  <Answer>Кусочек сахара</Answer>
@@ -67,7 +67,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Месяц, в котором любая женщина меньше всего разговаривает</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Февраль</Answer>
 		  <Answer>Январь</Answer>
 		  <Answer>Сентябрь</Answer>
@@ -75,7 +75,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Женский предмет при помощи которого можно вмиг поправить причёску, напудрить носик и сделать макияж</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Зеркало</Answer>
 		  <Answer>Косметичка</Answer>
 		  <Answer>Пудреница</Answer>
@@ -83,7 +83,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Что женщины бьют в гневе</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Посуду</Answer>
 		  <Answer>Родных</Answer>
 		  <Answer>Мебель</Answer>
@@ -91,7 +91,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Каждая женщина хотя бы раз в жизни, но садилась на это</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Диета</Answer>
 		  <Answer>Велосипед</Answer>
 		  <Answer>Стул</Answer>
@@ -99,7 +99,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Что объединяет погоду и моду?</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Изменчивость</Answer>
 		  <Answer>Сезонная одежда</Answer>
 		  <Answer>Внешний вид</Answer>
@@ -107,7 +107,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Даже те, кто никогда не летал на самолётах знают эту стюардессу</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Жанна</Answer>
 		  <Answer>Эллен Черч</Answer>
 		  <Answer>Вера</Answer>
@@ -115,7 +115,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Чего не найти в женской сумочке?</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Порядок</Answer>
 		  <Answer>Билеты на футбол</Answer>
 		  <Answer>Ключи</Answer>
@@ -123,7 +123,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Что теплее шубы?</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Две шубы</Answer>
 		  <Answer>Дублёнка</Answer>
 		  <Answer>Пуховик</Answer>
@@ -131,7 +131,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Что у женщины на теле, у стратега в голове, применяется в хоккее или в шахматной игре?</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Комбинация</Answer>
 		  <Answer>План действий</Answer>
 		  <Answer>Расчёт</Answer>
@@ -139,7 +139,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Человек здоров, не инвалид, не умер, но его вынесли из больницы на руках. Кто он?</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Новорождённый ребёнок</Answer>
 		  <Answer>Пожилой человек</Answer>
 		  <Answer>Человек в коме</Answer>
@@ -147,7 +147,7 @@
 	  </Question>
 	  <Question>
 		  <Title>Что досталось современной моде от Анны Карениной?</Title>
-		  <Image></Image>
+		  <AnswerImage><![CDATA[]]></AnswerImage>
 		  <Answer IsWin="True">Туфли на платформе</Answer>
 		  <Answer>Жемчужные украшения</Answer>
 		  <Answer>Ретро-стиль</Answer>

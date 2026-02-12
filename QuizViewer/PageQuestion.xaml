@@ -37,6 +37,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="1" Text="{Binding QuestionText}" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" 
@@ -45,7 +46,7 @@
                     <DropShadowEffect/>
                 </TextBlock.Effect>
             </TextBlock>
-            <Image Grid.Row="2" Source="{Binding QuestionImage}" Visibility="Collapsed" />
+            <Image Grid.Row="2" Source="{Binding QuestionImage}" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" />
         </Grid>
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.RowDefinitions>
