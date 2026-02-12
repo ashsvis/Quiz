@@ -7,11 +7,30 @@
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="PageTitle">
-
-    <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Backgrounds/Фон угадывания мелодии.jpg"/>
-        </Grid.Background>
-
+    <Page.Background>
+        <ImageBrush ImageSource="Backgrounds/Фон угадывания мелодии.jpg"/>
+    </Page.Background>
+    <Grid Margin="50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="0">
+            <TextBlock x:Name="soundName" FontFamily="Cambria" FontSize="78" Text="Наименование песни" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20,0"/>
+        </Border>
+        <Button Grid.Row="0" Grid.Column="1" Background="Transparent" BorderThickness="0" Cursor="Hand" Margin="10,-20,0,0">
+            <Image Stretch="None" Source="/Backgrounds/SoundButton.png"/>
+        </Button>
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Silver" BorderThickness="5" CornerRadius="50">
+            <Border.Effect>
+                <BlurEffect/>
+            </Border.Effect>
+            <Image Source="/Backgrounds/SoundButton.png" Stretch="Uniform" />
+        </Border>
     </Grid>
 </Page>

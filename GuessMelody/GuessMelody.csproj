@@ -9,10 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Backgrounds\SoundButton.png" />
     <None Remove="Backgrounds\Фон угадывания мелодии.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Backgrounds\SoundButton.png" />
     <Resource Include="Backgrounds\Фон угадывания мелодии.jpg" />
   </ItemGroup>
 
