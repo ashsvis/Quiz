@@ -48,7 +48,7 @@ namespace GuessMelody
                     if (slide != null)
                         slide.NextSlide = quest;
                     slide = quest;
-                    presentation.FirstSlide ??= slide;
+                    presentation.Slide ??= slide;
                 }
             }
         }

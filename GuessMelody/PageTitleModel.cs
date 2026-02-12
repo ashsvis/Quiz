@@ -4,8 +4,8 @@ namespace GuessMelody
     public class PageTitleModel : ObservableObject
     {
         private string? title;
-        private string? question;
-        private string? answer;
+        private string? soundMinus;
+        private string? sound;
         private object? image;
         private string? video;
 
@@ -32,22 +32,22 @@ namespace GuessMelody
             }
         }
 
-        public string? Question 
+        public string? SoundMinus 
         { 
-            get => question; 
+            get => soundMinus; 
             set 
             { 
-                question = value;
+                soundMinus = value;
                 NotifyPropertyChanged();
             }
         }
 
-        public string? Answer 
+        public string? Sound
         { 
-            get => answer; 
+            get => sound; 
             set 
             { 
-                answer = value;
+                sound = value;
                 NotifyPropertyChanged();
             }
         }
@@ -76,8 +76,11 @@ namespace GuessMelody
         {
             if (slide == null) return;
             Slide = slide;
-            Title = slide.Title;
-            Image = slide.Image;
+            //Title = slide.Title;
+            //Image = slide.Image;
+            SoundMinus = slide.Question;
+            Sound = slide.Answer;
+            Video = slide.Video;
         }
     }
 }

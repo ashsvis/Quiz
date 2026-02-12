@@ -33,12 +33,16 @@
                 Background="Transparent" BorderThickness="0" Cursor="Hand" Margin="10,-20,0,0">
             <Image Stretch="None" Source="/Backgrounds/SoundButton.png"/>
         </Button>
-        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="WhiteSmoke" BorderThickness="5" CornerRadius="50">
-            <Border.Effect>
-                <BlurEffect/>
-            </Border.Effect>
-            <Image x:Name="soundImage" Stretch="Uniform" Cursor="Hand" Source="{Binding Image}" />
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
+            <StackPanel>
+                <Label x:Name="buttonPlaySound" MouseDown="buttonPlaySound_MouseDown" Cursor="Hand">
+                    <Image x:Name="soundImage" MouseDown="buttonPlayVideo_MouseDown" Stretch="Uniform" Source="{Binding Image}" />
+                </Label>
+                <Label x:Name="buttonPlayVideo" Cursor="Hand" Visibility="Collapsed">
+                    <MediaElement x:Name="videoPlayer" Source="" LoadedBehavior="Manual"  />
+                </Label>
+            </StackPanel>
         </Border>
-        <MediaElement Name="soundPlayer" Source="" LoadedBehavior="Manual" />
+        <!--<MediaElement Name="soundPlayer" Source="" LoadedBehavior="Manual" />-->
     </Grid>
 </Page>
