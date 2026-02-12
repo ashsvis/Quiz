@@ -65,6 +65,7 @@ namespace QuizViewer
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             model.Assign(Root.Tournament.CurrentQuestion);
+            questionImage.Visibility = Visibility.Collapsed;
             SoundFile("gong-1.mp3");
             actions.Enqueue(new Action(() =>
             {
@@ -93,7 +94,10 @@ namespace QuizViewer
             actions.Enqueue(new Action(() =>
             {
                 if (Root.Tournament.CurrentQuestion != null && Root.Tournament.CurrentQuestion.AnswerImageSource != null)
+                {
+                    questionImage.Visibility = Visibility.Visible;
                     model.QuestionImage = Root.Tournament.CurrentQuestion.AnswerImageSource;
+                }
                 btnAnswer.Background = Tournament.CheckAnswer(choose) ? Brushes.Lime : Brushes.Red;
                 timer.Start();
             }));

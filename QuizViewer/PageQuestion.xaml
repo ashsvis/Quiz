@@ -46,7 +46,8 @@
                     <DropShadowEffect/>
                 </TextBlock.Effect>
             </TextBlock>
-            <Image Grid.Row="2" Source="{Binding QuestionImage}" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" />
+            <Image x:Name="questionImage" Grid.Row="2" Source="{Binding QuestionImage}"  Width="950" Height="600"
+                   Visibility="Visible" Margin="10" /> 
         </Grid>
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.RowDefinitions>
