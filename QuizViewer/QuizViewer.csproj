@@ -15,14 +15,11 @@
     <None Remove="Backgrounds\Запуск волчка.mp4" />
     <None Remove="Backgrounds\Назад.png" />
     <None Remove="Media\chgk2_gong.mp3" />
-    <None Remove="Media\chgk2_no1.mp3" />
-    <None Remove="Media\chgk2_no3.mp3" />
     <None Remove="Media\chgk2_otvet.mp3" />
     <None Remove="Media\chgk2_owl.mp3" />
     <None Remove="Media\chgk2_sig1.mp3" />
     <None Remove="Media\chgk2_sig2.mp3" />
     <None Remove="Media\chgk2_sig3.mp3" />
-    <None Remove="Media\chgk2_yes1.mp3" />
     <None Remove="Media\ending.mp3" />
     <None Remove="Media\gong-1.mp3" />
     <None Remove="Media\intro-old-version.mp3" />
@@ -44,12 +41,6 @@
     <Content Include="Media\chgk2_gong.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Media\chgk2_no1.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\chgk2_no3.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Media\chgk2_otvet.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -63,9 +54,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Media\chgk2_sig3.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Media\chgk2_yes1.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Media\ending.mp3">

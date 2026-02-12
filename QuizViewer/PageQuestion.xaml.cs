@@ -37,7 +37,14 @@ namespace QuizViewer
             if (Tournament.IsFinish)
                 mainFrame.Navigate(new PageTitle(mainFrame, "ending.mp3"));
             else
-                mainFrame.Navigate(new PageTitle(mainFrame, Root.Tournament.IsWinQuestion ? "chgk2_yes1.mp3" : "chgk2_no1.mp3"));
+                mainFrame.Navigate(new PageTitle(mainFrame, Root.Tournament.IsWinQuestion ? "pause1.mp3" : GetRandomName("pause2.mp3", "pause3.mp3", "pause4.mp3")));
+        }
+
+        private static string GetRandomName(params string[] strings)
+        {
+            Random random = new(DateTime.Now.Millisecond);
+            var index = random.Next(strings.Length);
+            return strings[index];
         }
 
         private void SoundPlayer_MediaOpened(object sender, RoutedEventArgs e)
