@@ -6,10 +6,16 @@
       xmlns:local="clr-namespace:GuessMelody"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
-      Title="PageTitle">
+      Title="PageTitle" Loaded="Page_Loaded" >
     <Page.Background>
         <ImageBrush ImageSource="Backgrounds/Фон угадывания мелодии.jpg"/>
     </Page.Background>
+    <Page.DataContext>
+        <local:PageTitleModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Page.Resources>
     <Grid Margin="50">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -21,16 +27,18 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="0">
-            <TextBlock x:Name="soundName" FontFamily="Cambria" FontSize="78" Text="Наименование песни" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20,0"/>
+            <TextBlock x:Name="soundName" FontFamily="Cambria" FontSize="78" Text="{Binding Title}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20,0"/>
         </Border>
-        <Button Grid.Row="0" Grid.Column="1" Background="Transparent" BorderThickness="0" Cursor="Hand" Margin="10,-20,0,0">
+        <Button Grid.Row="0" Grid.Column="1" x:Name="buttonPlayFragment" Click="buttonPlayFragment_Click" 
+                Background="Transparent" BorderThickness="0" Cursor="Hand" Margin="10,-20,0,0">
             <Image Stretch="None" Source="/Backgrounds/SoundButton.png"/>
         </Button>
-        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="Silver" BorderThickness="5" CornerRadius="50">
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="WhiteSmoke" BorderThickness="5" CornerRadius="50">
             <Border.Effect>
                 <BlurEffect/>
             </Border.Effect>
-            <Image Source="/Backgrounds/SoundButton.png" Stretch="Uniform" />
+            <Image x:Name="soundImage" Stretch="Uniform" Cursor="Hand" Source="{Binding Image}" />
         </Border>
+        <MediaElement Name="soundPlayer" Source="" LoadedBehavior="Manual" />
     </Grid>
 </Page>

@@ -11,6 +11,25 @@
   <ItemGroup>
     <None Remove="Backgrounds\SoundButton.png" />
     <None Remove="Backgrounds\Фон угадывания мелодии.jpg" />
+    <None Remove="Media\opening2013.mp3" />
+    <None Remove="Media\Мария Пахоменко - Стоят Девчонки %28минус%29.mp3" />
+    <None Remove="Media\Мария Пахоменко - Стоят Девчонки.mp3" />
+    <None Remove="Media\Мария Пахоменко - Стоят девчонки.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Media\opening2013.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Мария Пахоменко - Стоят Девчонки (минус).mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Мария Пахоменко - Стоят Девчонки.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\Мария Пахоменко - Стоят девчонки.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -19,7 +38,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Media\" />
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

@@ -172,6 +172,6 @@
                 </StackPanel>
             </Button>
         </StackPanel>
-        <MediaElement Source="" LoadedBehavior="Manual" Name="soundPlayer" />
+        <MediaElement Name="soundPlayer" Source="" LoadedBehavior="Manual" />
     </Grid>
 </Page>
