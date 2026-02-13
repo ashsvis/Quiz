@@ -1,13 +1,5 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+﻿using System.Windows;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GuessMelody
 {
@@ -24,7 +16,7 @@ namespace GuessMelody
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            mainFrame.Navigate(new PageTitle(mainFrame));
+            mainFrame.Navigate(new PageSlide(mainFrame));
         }
 
         private void mainFrame_Navigating(object sender, NavigatingCancelEventArgs e)

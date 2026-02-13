@@ -1,0 +1,47 @@
+﻿<Page x:Class="GuessMelody.PageSlide"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GuessMelody"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1920"
+      Title="PageSlide" Loaded="Page_Loaded" >
+    <Page.Background>
+        <ImageBrush ImageSource="Backgrounds/Фон угадывания мелодии.jpg"/>
+    </Page.Background>
+    <Page.DataContext>
+        <local:PageSlideModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </Page.Resources>
+    <Grid Margin="50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.RowSpan="2" Grid.Column="0">
+            <TextBlock x:Name="soundName" FontFamily="Cambria" FontSize="78" Text="{Binding Title}" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20,0"/>
+        </Border>
+        <Button Grid.Row="0" Grid.Column="1" x:Name="buttonPlayFragment" Click="buttonPlayFragment_Click" 
+                Background="Transparent" BorderThickness="0" Cursor="Hand" Margin="10,-20,0,0">
+            <Image Stretch="None" Source="/Backgrounds/SoundButton.png"/>
+        </Button>
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
+            <Label x:Name="selectorButton" MouseDown="selectorButton_MouseDown" Cursor="Hand">
+                <StackPanel>
+                    <Image x:Name="soundImageFragment" Width="1810" Height="880" Stretch="None" gif:ImageBehavior.AnimatedSource="/Backgrounds/cd.gif" Visibility="Collapsed" OpacityMask="White" />
+                    <Image x:Name="soundImage" Width="1810" Height="880" Stretch="Uniform" Source="{Binding Image}" Visibility="Collapsed" />
+                    <MediaElement x:Name="videoPlayer" Width="1810" Height="880" Source="" LoadedBehavior="Manual" Visibility="Collapsed" />
+                </StackPanel>
+            </Label>
+        </Border>
+    </Grid>
+</Page>
