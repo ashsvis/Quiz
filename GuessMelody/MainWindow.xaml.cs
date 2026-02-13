@@ -16,7 +16,7 @@ namespace GuessMelody
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            mainFrame.Navigate(new PageSlide(mainFrame));
+            mainFrame.Navigate(new PageIntro(mainFrame));
         }
 
         private void mainFrame_Navigating(object sender, NavigatingCancelEventArgs e)

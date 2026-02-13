@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="Backgrounds\cd.gif" />
     <None Remove="Backgrounds\SoundButton.png" />
+    <None Remove="Backgrounds\Угадай мелодию интро.png" />
     <None Remove="Backgrounds\Фон угадывания мелодии.jpg" />
     <None Remove="Media\Андрей Губин - Такие девушки как звезды %28минус%29.mp3" />
     <None Remove="Media\Андрей Губин - Такие девушки как звезды.mp3" />
@@ -69,6 +70,7 @@
   <ItemGroup>
     <Resource Include="Backgrounds\cd.gif" />
     <Resource Include="Backgrounds\SoundButton.png" />
+    <Resource Include="Backgrounds\Угадай мелодию интро.png" />
     <Resource Include="Backgrounds\Фон угадывания мелодии.jpg" />
   </ItemGroup>
 

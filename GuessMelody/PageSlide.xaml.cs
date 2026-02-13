@@ -40,7 +40,6 @@ namespace GuessMelody
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             model.Assign(Root.Presentation.Slide);
-            SoundResouceFile("opening2013.wav");
         }
 
         private void SoundFile(string? filename)
@@ -52,19 +51,6 @@ namespace GuessMelody
                 videoPlayer.Source = new Uri(soundfile);
                 videoPlayer.Play();
             }
-        }
-
-        private void SoundResouceFile(string? filename)
-        {
-            //get the current assembly
-            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            //load the embedded resource as a stream
-            var name = string.Format("{0}.Resources.{1}", assembly.GetName().Name, filename);
-            var stream = assembly.GetManifestResourceStream(name);
-            //load the stream into the player
-            soundPlayer.Stream = stream;
-            //play the sound
-            soundPlayer.Play();
         }
 
         private void buttonPlayFragment_Click(object sender, RoutedEventArgs e)
