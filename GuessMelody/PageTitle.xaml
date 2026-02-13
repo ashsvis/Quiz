@@ -34,14 +34,12 @@
             <Image Stretch="None" Source="/Backgrounds/SoundButton.png"/>
         </Button>
         <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
-            <StackPanel>
-                <Label x:Name="buttonPlaySound" MouseDown="buttonPlaySound_MouseDown" Cursor="Hand">
-                    <Image x:Name="soundImage" MouseDown="buttonPlayVideo_MouseDown" Stretch="Uniform" Source="{Binding Image}" />
-                </Label>
-                <Label x:Name="buttonPlayVideo" Cursor="Hand" Visibility="Collapsed">
-                    <MediaElement x:Name="videoPlayer" Source="" LoadedBehavior="Manual"  />
-                </Label>
-            </StackPanel>
+            <Label x:Name="selectorButton" MouseDown="selectorButton_MouseDown" Cursor="Hand">
+                <StackPanel>
+                    <Image x:Name="soundImage" Width="1810" Height="880" Stretch="Uniform" Source="{Binding Image}" Visibility="Collapsed" />
+                    <MediaElement x:Name="videoPlayer" Width="1810" Height="880" Source="" LoadedBehavior="Manual" Visibility="Collapsed" />
+                </StackPanel>
+            </Label>
         </Border>
         <!--<MediaElement Name="soundPlayer" Source="" LoadedBehavior="Manual" />-->
     </Grid>

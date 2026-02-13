@@ -52,5 +52,12 @@ namespace GuessMelody
                 }
             }
         }
+
+        public static bool NextSlide(this Slide slide)
+        {
+            if (slide.NextSlide == null) return false;
+            presentation.Slide = slide.NextSlide;
+            return true;
+        }
     }
 }

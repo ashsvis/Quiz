@@ -19,8 +19,6 @@ namespace GuessMelody
             InitializeComponent();
             this.mainFrame = mainFrame;
             model = (PageTitleModel)DataContext;
-            videoPlayer.MediaEnded += MePlayer_MediaEnded;
-            videoPlayer.MouseDown += MePlayer_MouseDown;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -45,47 +43,48 @@ namespace GuessMelody
             SoundFile(model.SoundMinus);
         }
 
-        private void buttonPlaySound_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void selectorButton_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (Root.Presentation.Slide is Slide slide)
             {
-                model.Title = slide.Title;
-                model.Image = slide.Image;
-                SoundFile(model.Sound);
+                if (soundImage.Visibility != Visibility.Visible &&
+                    videoPlayer.Visibility != Visibility.Visible)
+                {
+                    model.Title = slide.Title;
+                    model.Image = slide.Image;
+                    soundImage.Visibility = Visibility.Visible;
+                    SoundFile(model.Sound);
+                }
+                else if (soundImage.Visibility == Visibility.Visible)
+                {
+                    soundImage.Visibility = Visibility.Collapsed;
+                    videoPlayer.Visibility = Visibility.Visible;
+                    SoundFile(model.Video);
+                }
+                else if (videoPlayer.Visibility == Visibility.Visible)
+                {
+                    videoPlayer.Visibility = Visibility.Collapsed;
+                    model.Title = "";
+                    model.Image = null;
+                    videoPlayer.Stop();
+                    GotoNextSlide();
+                }
             }
         }
 
-        private void buttonPlayVideo_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void GotoNextSlide()
         {
             if (Root.Presentation.Slide is Slide slide)
             {
-                model.Title = slide.Title;
-                model.Image = null;
-                SoundFile(model.Video);
+                if (slide.NextSlide())
+                {
+                    model.Assign(Root.Presentation.Slide);
+                }
+                else
+                {
+                    // TODO: финиш
+                }
             }
-        }
-
-        private void MePlayer_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            GoToNextSlide();
-        }
-
-        private void MePlayer_MediaEnded(object sender, RoutedEventArgs e)
-        {
-            GoToNextSlide();
-        }
-
-        private void GoToNextSlide()
-        {
-            videoPlayer.Stop();
-            model.Title = "";
-            model.SoundMinus = "";
-            model.Sound = "";
-            model.Video = "";
-            videoPlayer.Visibility = Visibility.Hidden;
-            model.Image = null;
-            soundImage.Source = null;
-            soundImage.Visibility = Visibility.Visible;
         }
     }
 }
