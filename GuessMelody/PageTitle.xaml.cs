@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -19,6 +20,19 @@ namespace GuessMelody
             InitializeComponent();
             this.mainFrame = mainFrame;
             model = (PageTitleModel)DataContext;
+            videoPlayer.MediaOpened += VideoPlayer_MediaOpened;
+            videoPlayer.MediaEnded += VideoPlayer_MediaEnded;
+        }
+
+        private void VideoPlayer_MediaOpened(object sender, RoutedEventArgs e)
+        {
+            if (videoPlayer.HasAudio && model.Image == null)
+                soundImageFragment.Visibility = Visibility.Visible;
+        }
+
+        private void VideoPlayer_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            soundImageFragment.Visibility = Visibility.Collapsed;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -47,6 +61,7 @@ namespace GuessMelody
         {
             if (Root.Presentation.Slide is Slide slide)
             {
+                soundImageFragment.Visibility = Visibility.Collapsed;
                 if (soundImage.Visibility != Visibility.Visible &&
                     videoPlayer.Visibility != Visibility.Visible)
                 {

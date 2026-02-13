@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GuessMelody"
+      xmlns:gif="http://wpfanimatedgif.codeplex.com"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="PageTitle" Loaded="Page_Loaded" >
@@ -36,11 +37,11 @@
         <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" >
             <Label x:Name="selectorButton" MouseDown="selectorButton_MouseDown" Cursor="Hand">
                 <StackPanel>
+                    <Image x:Name="soundImageFragment" Width="1810" Height="880" Stretch="None" gif:ImageBehavior.AnimatedSource="/Backgrounds/cd.gif" Visibility="Collapsed" OpacityMask="White" />
                     <Image x:Name="soundImage" Width="1810" Height="880" Stretch="Uniform" Source="{Binding Image}" Visibility="Collapsed" />
                     <MediaElement x:Name="videoPlayer" Width="1810" Height="880" Source="" LoadedBehavior="Manual" Visibility="Collapsed" />
                 </StackPanel>
             </Label>
         </Border>
-        <!--<MediaElement Name="soundPlayer" Source="" LoadedBehavior="Manual" />-->
     </Grid>
 </Page>

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Backgrounds\cd.gif" />
     <None Remove="Backgrounds\SoundButton.png" />
     <None Remove="Backgrounds\Фон угадывания мелодии.jpg" />
     <None Remove="Media\opening2013.mp3" />
@@ -53,6 +54,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Backgrounds\cd.gif" />
     <Resource Include="Backgrounds\SoundButton.png" />
     <Resource Include="Backgrounds\Фон угадывания мелодии.jpg" />
   </ItemGroup>
