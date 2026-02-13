@@ -12,7 +12,6 @@
     <None Remove="Backgrounds\cd.gif" />
     <None Remove="Backgrounds\SoundButton.png" />
     <None Remove="Backgrounds\Фон угадывания мелодии.jpg" />
-    <None Remove="Media\opening2013.mp3" />
     <None Remove="Media\Андрей Губин - Такие девушки как звезды %28минус%29.mp3" />
     <None Remove="Media\Андрей Губин - Такие девушки как звезды.mp3" />
     <None Remove="Media\Мария Пахоменко - Стоят Девчонки %28минус%29.mp3" />
@@ -21,12 +20,10 @@
     <None Remove="Media\Муслим Магомаев - Королева красоты %28минус%29.mp3" />
     <None Remove="Media\Муслим Магомаев - Королева красоты.mp3" />
     <None Remove="Media\Муслим Магомаев - Королева красоты.mp4" />
+    <None Remove="Resources\opening2013.wav" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Media\opening2013.mp3">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Media\Андрей Губин - Такие девушки как звезды (минус).mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -51,6 +48,10 @@
     <Content Include="Media\Муслим Магомаев - Королева красоты.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\opening2013.wav" />
   </ItemGroup>
 
   <ItemGroup>

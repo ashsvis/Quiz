@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Media;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,6 +14,7 @@ namespace GuessMelody
         private readonly Frame mainFrame;
         private readonly PageTitleModel model;
 
+        private readonly System.Media.SoundPlayer soundPlayer;
         private readonly Queue<Action> actions = [];
 
         public PageTitle(Frame mainFrame)
@@ -20,12 +22,14 @@ namespace GuessMelody
             InitializeComponent();
             this.mainFrame = mainFrame;
             model = (PageTitleModel)DataContext;
+            soundPlayer = new System.Media.SoundPlayer();
             videoPlayer.MediaOpened += VideoPlayer_MediaOpened;
             videoPlayer.MediaEnded += VideoPlayer_MediaEnded;
         }
 
         private void VideoPlayer_MediaOpened(object sender, RoutedEventArgs e)
         {
+            soundPlayer.Stop();
             if (videoPlayer.HasAudio && model.Image == null)
                 soundImageFragment.Visibility = Visibility.Visible;
         }
@@ -38,7 +42,7 @@ namespace GuessMelody
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             model.Assign(Root.Presentation.Slide);
-            SoundFile("opening2013.mp3");
+            SoundResouceFile("opening2013.wav");
         }
 
         private void SoundFile(string? filename)
@@ -50,6 +54,19 @@ namespace GuessMelody
                 videoPlayer.Source = new Uri(soundfile);
                 videoPlayer.Play();
             }
+        }
+
+        private void SoundResouceFile(string? filename)
+        {
+            //get the current assembly
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            //load the embedded resource as a stream
+            var name = string.Format("{0}.Resources.{1}", assembly.GetName().Name, filename);
+            var stream = assembly.GetManifestResourceStream(name);
+            //load the stream into the player
+            soundPlayer.Stream = stream;
+            //play the sound
+            soundPlayer.Play();
         }
 
         private void buttonPlayFragment_Click(object sender, RoutedEventArgs e)

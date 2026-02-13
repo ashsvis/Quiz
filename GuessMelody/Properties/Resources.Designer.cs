@@ -74,5 +74,14 @@ namespace GuessMelody.Properties {
                 return ResourceManager.GetString("content", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream opening2013 {
+            get {
+                return ResourceManager.GetStream("opening2013", resourceCulture);
+            }
+        }
     }
 }
