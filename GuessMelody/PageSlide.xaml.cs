@@ -60,15 +60,18 @@ namespace GuessMelody
         {
             if (!fragmentPlayed)
             {
+                fragmentPlayed = true;
                 SoundFile(model.SoundMinus);
                 if (videoPlayer.HasAudio && model.Image == null)
                     soundImageFragment.Visibility = Visibility.Visible;
+                selectorButton.IsEnabled = false;
             }
             else
             {
                 fragmentPlayed = false;
                 videoPlayer.Stop();
                 soundImageFragment.Visibility = Visibility.Collapsed;
+                selectorButton.IsEnabled = true;
             }
         }
 
@@ -76,6 +79,7 @@ namespace GuessMelody
         {
             if (Root.Presentation.Slide is Slide slide)
             {
+                buttonPlayFragment.Visibility = Visibility.Collapsed;
                 soundImageFragment.Visibility = Visibility.Collapsed;
                 if (soundImage.Visibility != Visibility.Visible &&
                     videoPlayer.Visibility != Visibility.Visible)
@@ -87,17 +91,14 @@ namespace GuessMelody
                 }
                 else if (soundImage.Visibility == Visibility.Visible)
                 {
+                    fragmentPlayed = false;
                     soundImage.Visibility = Visibility.Collapsed;
-                    videoPlayer.Visibility = Visibility.Visible;
-                    SoundFile(model.Video);
-                }
-                else if (videoPlayer.Visibility == Visibility.Visible)
-                {
-                    videoPlayer.Visibility = Visibility.Collapsed;
+                    selectorButton.IsEnabled = false;
                     model.Title = "";
                     model.Image = null;
                     videoPlayer.Stop();
                     GotoNextSlide();
+                    buttonPlayFragment.Visibility = Visibility.Visible;
                 }
             }
         }
