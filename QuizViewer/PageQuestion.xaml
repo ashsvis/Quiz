@@ -47,7 +47,7 @@
                 </TextBlock.Effect>
             </TextBlock>
             <Image x:Name="questionImage" Grid.Row="2" Source="{Binding QuestionImage}"  Width="950" Height="600"
-                   Visibility="Visible" Margin="10" /> 
+                   Visibility="Visible" Margin="10" Cursor="Hand" MouseDown="questionImage_MouseDown" /> 
         </Grid>
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.RowDefinitions>

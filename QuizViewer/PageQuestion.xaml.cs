@@ -25,7 +25,7 @@ namespace QuizViewer
             soundPlayer.MediaEnded += SoundPlayer_MediaEnded;
             timer = new DispatcherTimer
             {
-                Interval = new TimeSpan(0, 0, 3)
+                Interval = new TimeSpan(0, 0, 15)
             };
             timer.Tick += Timer_Tick;
         }
@@ -33,6 +33,11 @@ namespace QuizViewer
         private void Timer_Tick(object? sender, EventArgs e)
         {
             timer.Stop();
+            CheckEnding();
+        }
+
+        private void CheckEnding()
+        {
             Tournament.GoNextQuestion();
             if (Tournament.IsFinish)
                 mainFrame.Navigate(new PageTitle(mainFrame, "ending.mp3"));
@@ -121,6 +126,12 @@ namespace QuizViewer
         private void btnAnswerD_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             CheckAnswer("D", btnAnswerD);
+        }
+
+        private void questionImage_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            timer.Stop();
+            CheckEnding();
         }
     }
 }
