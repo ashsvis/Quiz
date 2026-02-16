@@ -14,6 +14,7 @@ namespace GuessMelody
 
         private readonly System.Media.SoundPlayer soundPlayer;
         private readonly Queue<Action> actions = [];
+        private bool fragmentPlayed;
 
         public PageSlide(Frame mainFrame)
         {
@@ -48,14 +49,27 @@ namespace GuessMelody
             if (File.Exists(soundfile))
             {
                 videoPlayer.Stop();
+                fragmentPlayed = false;
                 videoPlayer.Source = new Uri(soundfile);
                 videoPlayer.Play();
+                fragmentPlayed = true;
             }
         }
 
         private void buttonPlayFragment_Click(object sender, RoutedEventArgs e)
         {
-            SoundFile(model.SoundMinus);
+            if (!fragmentPlayed)
+            {
+                SoundFile(model.SoundMinus);
+                if (videoPlayer.HasAudio && model.Image == null)
+                    soundImageFragment.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                fragmentPlayed = false;
+                videoPlayer.Stop();
+                soundImageFragment.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void selectorButton_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
