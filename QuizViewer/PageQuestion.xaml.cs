@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Speech.Synthesis;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -71,7 +72,14 @@ namespace QuizViewer
         {
             model.Assign(Root.Tournament.CurrentQuestion);
             questionImage.Visibility = Visibility.Collapsed;
-            SoundFile("gong-1.mp3");
+            //SoundFile("gong-1.mp3");
+            Task.Run(() =>
+            {
+                using SpeechSynthesizer synth = new();
+                //synth.Speak(model.QuestionText);
+                synth.SetOutputToWaveFile("D:\\Work\\test.wav");
+                SoundWavFile("D:\\Work\\test.wav");
+            });
             actions.Enqueue(new Action(() =>
             {
                 if (Tournament.IsNextQuestion)
@@ -92,6 +100,17 @@ namespace QuizViewer
             }
         }
 
+        private void SoundWavFile(string filename)
+        {
+            var soundfile = filename;
+            if (File.Exists(soundfile))
+            {
+                soundPlayer.Stop();
+                soundPlayer.Source = new Uri(soundfile);
+                soundPlayer.Play();
+            }
+        }
+
         private void CheckAnswer(string choose, Border btnAnswer)
         {
             btnAnswer.Background = Brushes.Silver;
@@ -103,7 +122,16 @@ namespace QuizViewer
                     questionImage.Visibility = Visibility.Visible;
                     model.QuestionImage = Root.Tournament.CurrentQuestion.AnswerImageSource;
                 }
-                btnAnswer.Background = Tournament.CheckAnswer(choose) ? Brushes.Lime : Brushes.Red;
+                var right = Tournament.CheckAnswer(choose, out string answer);
+                btnAnswer.Background = right ? Brushes.Lime : Brushes.Red;
+                if (right)
+                {
+                    Task.Run(() =>
+                    {
+                        using SpeechSynthesizer synth = new();
+                        synth.Speak(answer);
+                    });
+                }
                 timer.Start();
             }));
         }

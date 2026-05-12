@@ -39,23 +39,28 @@ namespace QuizViewer
 
         public static bool IsFinish => Root.Tournament.CurrentQuestion == null;
 
-        public static bool CheckAnswer(string choose)
+        public static bool CheckAnswer(string choose, out string answer)
         {
+            answer = "";
             if (Root.Tournament.CurrentQuestion == null) return false;
             bool result = false;
             switch (choose)
             {
                 case "A":
                     result = Root.Tournament.CurrentQuestion.Answers[0].IsWin;
+                    answer = Root.Tournament.CurrentQuestion.Answers[0].Title;
                     break;
                 case "B":
                     result = Root.Tournament.CurrentQuestion.Answers[1].IsWin;
+                    answer = Root.Tournament.CurrentQuestion.Answers[1].Title;
                     break;
                 case "C":
                     result = Root.Tournament.CurrentQuestion.Answers[2].IsWin;
+                    answer = Root.Tournament.CurrentQuestion.Answers[2].Title;
                     break;
                 case "D":
                     result = Root.Tournament.CurrentQuestion.Answers[3].IsWin;
+                    answer = Root.Tournament.CurrentQuestion.Answers[3].Title;
                     break;
             }
             if (result)

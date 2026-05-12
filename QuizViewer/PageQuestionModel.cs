@@ -1,4 +1,5 @@
-﻿
+﻿using System.Speech.Synthesis;
+
 namespace QuizViewer
 {
     public class PageQuestionModel : ObservableObject
@@ -197,7 +198,7 @@ namespace QuizViewer
             AnswerAexists = !string.IsNullOrEmpty(AnswerA);
             AnswerBexists = !string.IsNullOrEmpty(AnswerB);
             AnswerCexists = !string.IsNullOrEmpty(AnswerC);
-            AnswerDexists = !string.IsNullOrEmpty(AnswerD);
+            AnswerDexists = !string.IsNullOrEmpty(AnswerD);            
         }
 
         private static void UpdateItems(Random random, List<int> items)

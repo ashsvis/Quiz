@@ -95,6 +95,7 @@
     <Content Include="Media\Запуск волчка.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <PackageReference Include="System.Speech" Version="10.0.7" />
     <Resource Include="Backgrounds\Назад.png" />
   </ItemGroup>
 
